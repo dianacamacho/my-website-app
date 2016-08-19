@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root "pages#home"
   get '/' => 'pages#home'
   get '/resume' => 'pages#resume'
   get '/portfolio' => 'pages#portfolio'
