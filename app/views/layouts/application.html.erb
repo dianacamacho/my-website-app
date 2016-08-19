@@ -9,23 +9,23 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name=viewport content="width=device-width, initial-scale=1">
 
-   <title><%= @title %></title>
+   <title><%= @title || "Diana Camacho" %></title>
 
    <meta name="description" content="Gridus vCard HTML Template is the professional responsive personal website template, based on the latest Bootstrap 3">
    <meta name="keywords" content="html5, template, website, responsive, bootstrap">
    <meta name="author" content="neuethemes">
 
    <!-- CSS -->
-   <link href="assets/vendor/bootstrap/css/bootstrap.min.css"        property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
-   <link href="assets/vendor/fontawesome/css/font-awesome.min.css"   property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
-   <link href="assets/vendor/flaticons/flaticon.css"                 property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
-   <link href="assets/vendor/hover/css/hover-min.css"                property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
-   <link href="assets/vendor/wow/animate.css"                        property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
-   <link href="assets/vendor/mfp/css/magnific-popup.css"             property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/vendor/bootstrap/css/bootstrap.min.css"        property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/vendor/fontawesome/css/font-awesome.min.css"   property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/vendor/flaticons/flaticon.css"                 property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/vendor/hover/css/hover-min.css"                property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/vendor/wow/animate.css"                        property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/vendor/mfp/css/magnific-popup.css"             property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
    <!-- Remove this for disable demo panel styles -->
-   <link href="assets/vendor/styleselector/styleselector.css"        property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/vendor/styleselector/styleselector.css"        property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
    <!-- Custom styles -->
-   <link href="assets/custom/css/style.css"                          property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
+   <link href="/assets/custom/css/style.css"                          property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
    <%= csrf_meta_tags %>
    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -38,7 +38,7 @@
          width: 100%;
          height: 100%;
          overflow: visible;
-         background: #666666 url("assets/custom/images/preloader.gif") no-repeat center center; }
+         background: #666666 url("/assets/custom/images/preloader.gif") no-repeat center center; }
    </style>
 
 </head>
@@ -46,8 +46,7 @@
 <body class="boxed">
 
 <!--Pre-Loader-->
-<div id="preloader"></div>
-
+<!-- <div id="preloader"></div> -->
 <header>
 
    <section id="top-navigation" class="container-fluid nopadding">
@@ -95,7 +94,7 @@
                   <a href="/" class="hvr-sweep-to-bottom"><i class="flaticon-insignia"></i><span>home</span></a>
                </li>
                <li class="col-xs-4 col-sm-2 nopadding menuitem ui-menu-color02">
-                  <a href="/resume" class="hvr-sweep-to-bottom"><i class="flaticon-graduation61"></i><span>resume</span></a>
+                  <a href="/resume" class="hvr-sweep-to-bottom"><i class="flaticon-graduation9"></i><span>resume</span></a>
                </li>
                <li class="col-xs-4 col-sm-2 nopadding menuitem ui-menu-color03">
                   <a href="/portfolio" class="hvr-sweep-to-bottom"><i class="flaticon-book-bag2"></i><span>portfolio</span></a>
@@ -120,8 +119,6 @@
 </header>
 
 <!-- Container -->
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 <%= yield %>
 
 <footer class="padding-50 ui-bg-color02">
