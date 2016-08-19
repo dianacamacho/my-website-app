@@ -82,7 +82,11 @@
 
                </div>
                <div class="col-md-2 nopadding pdf">
-                  <a href="#" class="hvr-sweep-to-right"><i class="flaticon-behance7" title="My Behance Portfolio"></i></a>
+                  <% if user_signed_in? %>
+                     <a href="/users/edit" class="hvr-sweep-to-right"><i class="flaticon-tool-1" title="My Behance Portfolio"></i></a>
+                  <% else %>
+                     <a href="#" class="hvr-sweep-to-right"><i class="flaticon-tool-1" title="My Behance Portfolio"></i></a>   
+                  <% end %>
                </div>
             </div>
             <!-- /Name-Position -->
