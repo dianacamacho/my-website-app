@@ -1029,7 +1029,7 @@ button, input, select, textarea {
     color: #e7e7e7; }
     #top-navigation .ident .vc-photo {
       min-height: 360px;
-      background: url("/assets/custom/images/userpic01.jpg");
+      background: url("/assets/user_photo_1.jpg");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
