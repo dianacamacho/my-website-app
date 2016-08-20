@@ -1,0 +1,41 @@
+<div class="content-wrap" id="login">
+  <div id="feedback" class="inner-content">
+    <section id="page-title" class="inner-section">
+      <div class="container-fluid nopadding wow fadeInRight" data-wow-delay="0.4s" data-wow-offset="10">
+        <h2 class="font-accident-two-normal uppercase">Edit Blog Post</h2>
+        <h5 class="font-accident-one-bold uppercase subtitle">Enter updated post text!</h5>
+      </div>
+    </section>
+    <!-- Feedback Block -->
+    <section class="inner-section feedback feedback-light">
+      <div class="container-fluid nopadding">
+        <div class="row">
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-8 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
+            <div class="dividewhite2"></div>
+            <div id="form-messages"></div>
+            <%= form_for(@blog_post, url: blog_post_path(@blog_post), html: {:class => "wpcf7-form" }) do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <div class="field">
+                <!--<label for="name">Name:</label>-->
+                <%= f.text_field :title, autofocus: true, placeholder: "Title" %>
+              </div>
+              <div class="field">
+                <!--<label for="name">Name:</label>-->
+                <%= f.text_area :text, autofocus: true, size: "20x10" %>
+              </div>
+              <div class="field text-center">
+                <%= button_tag "Update Post", class: "btn btn-lg btn-darker" %>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-md-12 divider-dynamic"></div>
+        </div>
+      </div>
+      <div class="dividewhite6"></div>
+    </section>
+    <!-- /Feedback Block -->
+  </div>
+</div>
+
