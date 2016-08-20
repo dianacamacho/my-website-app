@@ -14,7 +14,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new(blog_post_params)
 
     if @blog_post.save
-      redirect_to blog_posts_path
+      redirect_to blog_post_path(@blog_post)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class BlogPostsController < ApplicationController
 
   def update
     if @blog_post.update(blog_post_params)
-      redirect_to blog_posts_path
+      redirect_to blog_post_path(@blog_post)
     else
       render :edit
     end
