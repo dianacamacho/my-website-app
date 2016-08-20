@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/' => 'pages#home'
   get '/resume' => 'pages#resume'
   get '/portfolio' => 'pages#portfolio'
-  get '/blog' => 'pages#blog'
   get '/interests' => 'pages#interests'
   get '/contact' => 'pages#contact'
 

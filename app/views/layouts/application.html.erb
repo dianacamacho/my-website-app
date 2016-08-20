@@ -61,7 +61,11 @@
             <div class="row nopadding name">
                <div class="col-md-10 name-title"><h2 class="font-accident-two-light uppercase">Diana Camacho</h2></div>
                <div class="col-md-2 nopadding name-pdf">
-                  <a href="#" class="hvr-sweep-to-right"><i class="flaticon-download149" title="Download CV.pdf"></i></a>
+                  <% if user_signed_in? %>
+                     <a href="/users/sign_out" class="hvr-sweep-to-right"><i class="flaticon-circle-3" title="Sign Out"></i></a>
+                  <% else %>
+                     <a href="#" class="hvr-sweep-to-right"><i class="flaticon-download149" title="View Resume.pdf"></i></a>
+                  <% end %>
                </div>
             </div>
             <div class="row nopadding position">
@@ -83,9 +87,9 @@
                </div>
                <div class="col-md-2 nopadding pdf">
                   <% if user_signed_in? %>
-                     <a href="/users/edit" class="hvr-sweep-to-right"><i class="flaticon-tool-1" title="My Behance Portfolio"></i></a>
+                     <a href="/users/edit" class="hvr-sweep-to-right"><i class="flaticon-tool-1" title="Manage Account"></i></a>
                   <% else %>
-                     <a href="#" class="hvr-sweep-to-right"><i class="flaticon-tool-1" title="My Behance Portfolio"></i></a>   
+                     <a href="#" class="hvr-sweep-to-right"></a>   
                   <% end %>
                </div>
             </div>
@@ -104,7 +108,7 @@
                   <a href="/portfolio" class="hvr-sweep-to-bottom"><i class="flaticon-book-bag2"></i><span>portfolio</span></a>
                </li>
                <li class="col-xs-4 col-sm-2 nopadding menuitem ui-menu-color06">
-                  <a href="/blog" class="hvr-sweep-to-bottom"><i class="flaticon-pens15"></i><span>blog</span></a>
+                  <a href="/blog_posts" class="hvr-sweep-to-bottom"><i class="flaticon-pens15"></i><span>blog</span></a>
                </li>
                <li class="col-xs-4 col-sm-2 nopadding menuitem ui-menu-color05">
                   <a href="/interests" class="hvr-sweep-to-bottom"><i class="flaticon-symbol"></i><span>interests</span></a>
