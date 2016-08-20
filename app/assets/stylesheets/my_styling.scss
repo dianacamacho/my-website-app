@@ -1,8 +1,15 @@
 .inner-section.feedback.feedback-light {
-    padding-top: 0px;
+  padding-top: 0px;
 }
 
 .devise-links {
-    margin-top: 20px;
-    text-align: center;
-  }
+  margin-top: 20px;
+  text-align: center;
+}
+
+#homesection .m-details i.followme::before{
+  margin: 0px;
+  padding: 5px 7px 5px 8px;
+  border: solid 2px #2f2f2f;
+  border-radius: 20%;
+}
