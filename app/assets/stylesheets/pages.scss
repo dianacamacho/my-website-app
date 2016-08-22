@@ -4,3 +4,9 @@
 .resume-skills {
   min-height: 760px;
 }
+
+#portfolio-page {
+  .count-container .count-icon i::before {
+    font-size: 30px;
+  }
+}
