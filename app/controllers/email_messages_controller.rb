@@ -5,9 +5,9 @@ class EmailMessagesController < ApplicationController
 
   def create
     @email_message = EmailMessage.new(params[:email_message])
-    @email_mesage.request = request
+    @email_message.request = request
 
-    if @email_mesage.deliver
+    if @email_message.deliver
       flash[:success] = "Email sent! Thanks for your message!"
       redirect_to "/"
     else
