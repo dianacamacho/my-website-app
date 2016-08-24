@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   get '/resume' => 'pages#resume'
   get '/portfolio' => 'pages#portfolio'
   get '/interests' => 'pages#interests'
-  get '/contact' => 'pages#contact'
-
+  get '/contact' => 'email_messages#new'
+  post '/email_messages' => 'email_messages#create'
+  
   resources :blog_posts
-  resources :email_messages, only: [:new, :create]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
