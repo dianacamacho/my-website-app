@@ -1,6 +1,7 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_title 
 
   def index
     @blog_posts = BlogPost.all
@@ -14,6 +15,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new(blog_post_params)
 
     if @blog_post.save
+      flash[:success] = "Blog post successfully created!"
       redirect_to blog_post_path(@blog_post)
     else
       render :new
@@ -28,6 +30,7 @@ class BlogPostsController < ApplicationController
 
   def update
     if @blog_post.update(blog_post_params)
+      flash[:success] = "Blog post successfully updated!"
       redirect_to blog_post_path(@blog_post)
     else
       render :edit
@@ -36,6 +39,7 @@ class BlogPostsController < ApplicationController
 
   def destroy
     @blog_post.destroy
+    flash[:success] = "Blog post successfully deleted!"
     redirect_to blog_posts_path
   end
 
@@ -46,5 +50,9 @@ class BlogPostsController < ApplicationController
 
     def blog_post_params
       params.require(:blog_post).permit(:user_id, :title, :text)
+    end
+
+    def set_title
+      @title = "Blog"
     end
 end
