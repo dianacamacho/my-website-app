@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
   before_action :set_title 
 
   def index
-    @projects = Project.all
   end
 
   def new
