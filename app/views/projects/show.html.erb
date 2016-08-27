@@ -32,35 +32,28 @@
                <hr>
                <span class="screencap-heading">Screencaps</span>
                <div class="dividewhite4"></div>
-               
 
               <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  <% (@project.images.size - 1).times do %>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <% end %>  
                 </ol>
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                   <div class="item active">
-         
-                      <%= image_tag "portfolio_pics/#{@project.image_1}", class: "img-responsive wow fadeInDown" %>
-            
-                    <div class="carousel-caption">
-                      ...
-                    </div>
+                    <%= image_tag "portfolio_pics/#{@project.image_1}", class: "img-responsive wow fadeInDown" %>
                   </div>
-                  <div class="item">
-                    
-                      <%= image_tag "portfolio_pics/#{@project.image_2}", class: "img-responsive wow fadeInDown" %>
-              
-                    <div class="carousel-caption">
-                      ...
-                    </div>
-                  </div>
-                  ...
+                  <% @project.images.each_with_index do |image, index| %>
+                    <% if index > 0 %>
+                      <div class="item">
+                        <%= image_tag "portfolio_pics/#{image}", class: "img-responsive wow fadeInDown indiv-images" %>
+                      </div>
+                    <% end %>
+                  <% end %>
                 </div>
 
                 <!-- Controls -->
