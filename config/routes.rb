@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   root "pages#home"
   get '/' => 'pages#home'
   get '/resume' => 'pages#resume'
+  get '/portfolio' => 'projects#index'
   get '/interests' => 'pages#interests'
   get '/contact' => 'email_messages#new'
   post '/email_messages' => 'email_messages#create'
-  get '/portfolio' => 'pages#portfolio'
   
   resources :blog_posts
-
+  resources :projects
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
