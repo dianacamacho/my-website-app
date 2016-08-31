@@ -29,4 +29,26 @@
       max-height: 600px;
     }
   }
+
+  .project-links {
+    margin: auto;
+  }
+
+  .link-wrapper {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    border: solid 2px #2f2f2f;
+    border-radius: 20%;
+    margin: 0px 5px;
+  }
+
+  i.link-icon {
+    font-size: 30px;
+    padding: 7px 0px 0px 1px;
+  }
+  
+  .list-inline.social{
+    margin-top: 15px;
+  }
 }

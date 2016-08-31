@@ -18,6 +18,31 @@
               <% end %>
             </div>
          </div>
+
+         <div class="project-links">
+           <ul class="list-inline social">
+             <% unless @project.preview == "" || @project.preview == nil %>
+               <div class="link-wrapper text-center">
+                 <li><a target="_blank" href="<%= @project.preview %>"><i class="fa fa-eye link-icon"></i></a></li>
+               </div>
+             <% end %>
+             <% unless @project.github == "" || @project.github == nil %>
+               <div class="link-wrapper text-center">
+                 <li><a target="_blank" href="<%= @project.github %>"><i class="fa fa-github-square link-icon"></i></a></li>
+                </div>
+             <% end %>
+             <% unless @project.website == "" || @project.website == nil %>
+               <div class="link-wrapper text-center">
+                 <li><a target="_blank" href="<%= @project.website %>"><i class="fa fa-laptop link-icon"></i></a></li>
+               </div>
+             <% end %>
+             <% unless @project.screencast == "" || @project.screencast == nil %>
+               <div class="link-wrapper text-center">
+                 <li><a target="_blank" href="<%= @project.screencast %>"><i class="fa fa-video-camera link-icon"></i></a></li>
+               </div>
+             <% end %>
+           </ul>
+         </div>
       </section>
       <!-- Blog Block -->
       <section class="inner-section project-post">
