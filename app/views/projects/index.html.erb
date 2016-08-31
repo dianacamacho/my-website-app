@@ -8,6 +8,12 @@
           I'm new to web development but I've had the opportunity to work on a few client projects and the capstone project for my coding bootcamp. Feel free to check them out!
         </p>
       </div>
+      <% if user_signed_in? %>
+        <br>
+        <div>
+          <%= link_to "Add Project", new_project_path, class: "btn btn-lg btn-darker" %>
+        </div>
+      <% end %>
     </section>
     <!-- Counts Block -->
     <section id="counts-light-bg" class="counts inner-section bg-color02 wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
