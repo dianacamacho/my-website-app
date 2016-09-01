@@ -41,7 +41,7 @@
             </a>
           <% end %>
           <% unless @project.screencast == "" || @project.screencast == nil %>
-            <a target="_blank" href="<%= @project.github %>" data-toggle="tooltip" data-placement="bottom" title="App Screencast">
+            <a target="_blank" href="<%= @project.screencast %>" data-toggle="tooltip" data-placement="bottom" title="App Screencast">
               <div class="link-wrapper text-center">
                 <li><i class="fa fa-video-camera link-icon"></i></li>
               </div>
