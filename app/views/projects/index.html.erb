@@ -8,6 +8,7 @@
           I'm new to web development but I've had the opportunity to work on a few client projects and the capstone project for my coding bootcamp. Feel free to check them out!
         </p>
       </div>
+
       <% if user_signed_in? %>
         <br>
         <div>
@@ -75,12 +76,14 @@
                   <a href="assets/portfolio_pics/network_sign_in_600h.png" class="gallery-item"><i class="flaticon-arrows-4"></i></a>
                 </div>
                 <%= image_tag "portfolio_pics/network_sign_in_600h.png", class: "img-responsive portfolio-pics" %>
-                <a href="/projects/1" target="_parent"><figcaption>
-                  <div class="fig-description">
-                    <h3>ACLTC <span>Network App</span></h3>
-                    <p>#client work #ruby on rails #angular</p>
-                  </div>
-                </figcaption></a>
+                <a href="/projects/1">
+                  <figcaption>
+                    <div class="fig-description">
+                      <h3>ACLTC <span>Network App</span></h3>
+                      <p>#client work #ruby on rails #angular</p>
+                    </div>
+                  </figcaption>
+                </a>
               </figure>
             </div>
           </div>
