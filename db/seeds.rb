@@ -1,10 +1,10 @@
 Project::HABTM_Technologies.create!([
-  {technology_id: 3, project_id: 1},
-  {technology_id: 62, project_id: 1},
-  {technology_id: 61, project_id: 1},
-  {technology_id: 6, project_id: 1},
-  {technology_id: 8, project_id: 1},
-  {technology_id: 2, project_id: 1},
+  # {technology_id: 3, project_id: 1},
+  # {technology_id: 62, project_id: 1},
+  # {technology_id: 61, project_id: 1},
+  # {technology_id: 6, project_id: 1},
+  # {technology_id: 8, project_id: 1},
+  # {technology_id: 2, project_id: 1},
   {technology_id: 3, project_id: 2},
   {technology_id: 62, project_id: 2},
   {technology_id: 61, project_id: 2},
@@ -20,12 +20,12 @@ Project::HABTM_Technologies.create!([
   {technology_id: 2, project_id: 3}
 ])
 Technology::HABTM_Projects.create!([
-  {technology_id: 3, project_id: 1},
-  {technology_id: 62, project_id: 1},
-  {technology_id: 61, project_id: 1},
-  {technology_id: 6, project_id: 1},
-  {technology_id: 8, project_id: 1},
-  {technology_id: 2, project_id: 1},
+  # {technology_id: 3, project_id: 1},
+  # {technology_id: 62, project_id: 1},
+  # {technology_id: 61, project_id: 1},
+  # {technology_id: 6, project_id: 1},
+  # {technology_id: 8, project_id: 1},
+  # {technology_id: 2, project_id: 1},
   {technology_id: 3, project_id: 2},
   {technology_id: 62, project_id: 2},
   {technology_id: 61, project_id: 2},
@@ -48,7 +48,7 @@ Technology::HABTM_Projects.create!([
 #   {user_id: 1, title: "Recipe", text: "<p>Step 1: Add 1.5 cups of milk</p>\r\n<p>Step 2: Add something else</p>\r\n<p>Step 3: More stuff</p>"}
 # ])
 Project.create!([
-  {user_id: 1, name: "ACLTC Network App", description: "<p>I am currently developing this app as a hiring/networking tool for employers and alumni of Anyone Can Learn To Code's (ACLTC) Actualize coding bootcamp.</p>\r\n\r\n<p>Students can create a profile including information about their tech skills, projects, job preferences, etc. to show off their individual skills to potential employers. Employers create profiles for their companies and can log in to search the alumni database for potential hires, who they can email via the app to begin a conversation.</p>\r\n\r\n<p>It is built using Ruby on Rails, while AngularJS provides the ability to search student profiles and dynamically filter profiles by technology/skills.</p>", github: "https://github.com/the-difference-engine/network-app", website: "", screencast: "", preview: "", image_1: "network_sign_in_600h.png", image_2: "network_admin_dash_600h.png", image_3: "network_index_600h.png", image_4: "network_student_show_600h.png"},
+  # {user_id: 1, name: "ACLTC Network App", description: "<p>I am currently developing this app as a hiring/networking tool for employers and alumni of Anyone Can Learn To Code's (ACLTC) Actualize coding bootcamp.</p>\r\n\r\n<p>Students can create a profile including information about their tech skills, projects, job preferences, etc. to show off their individual skills to potential employers. Employers create profiles for their companies and can log in to search the alumni database for potential hires, who they can email via the app to begin a conversation.</p>\r\n\r\n<p>It is built using Ruby on Rails, while AngularJS provides the ability to search student profiles and dynamically filter profiles by technology/skills.</p>", github: "https://github.com/the-difference-engine/network-app", website: "", screencast: "", preview: "", image_1: "network_sign_in_600h.png", image_2: "network_admin_dash_600h.png", image_3: "network_index_600h.png", image_4: "network_student_show_600h.png"},
   {user_id: 1, name: "Seat Scoop", description: "<p>No one likes buying an expensive ticket only to get to the theater and find they're stuck with a terrible view. And what exactly should I expect when venues say a seat has a *limited* or *obstructed* view? As a huge fan of theater I go to a lot of shows, and making an app to address these issues was the first thing that came to mind when it was time to choose a capstone project for my coding bootcamp.</p>\r\n\r\n<p>Seat Scoop is a web app that helps users get an inside look at theaters, particularly their seating plan. It is also linked to the SeatGeek and Google Places APIs, which help users search events and nearby restaurants to plan other details of a night out.  But the main feature is the production of dynamic seating charts with clickable seats that show you photos of the view of the stage from each individual seat.</p>\r\n\r\n<p>Photos of seat views are crowd sourced, so users can upload photos from their night out to a venue's seating chart. The next visitor to the venue's page will then have access to a series of photos for a seat, so they know exactly what to expect if they decide to buy that seat.</p>\r\n\r\n<p>It is built using Ruby on Rails and utilizes JavaScript and the EaselJS library for drawing the seating charts, AngularJS for dynamic search/filtering, HTML, CSS, Bootstrap, MySQL, Amazon S3, and the Google Maps/Places and SeatGeek APIs.", github: "https://github.com/dianacamacho/theater-app", website: "", screencast: "https://www.youtube.com/watch?v=gJRIlpB5N10", preview: "", image_1: "seat_scoop_screencap_1_600h.png", image_2: "seat_scoop_screencap_2_600h.png", image_3: "seat_scoop_events.png", image_4: "seat_scoop_restaurants.png"},
   {user_id: 1, name: "JUST-a-BREAK", description: "<p>Just-a-Break is an organization that obtains donations from businesses located near cancer treatment centers and presents the gifts to cancer patients or their caregivers to give them \"just a break.\" They needed a web app that allowed them to manage their team of volunteers and the donations they receive.</p>\r\n\r\n<p>Using Ruby on Rails, my team and I built an app that enables volunteers to add businesses, donations, and treatment centers to a database from the field, via any device. AngularJS provides dynamic search functionality so volunteers can quickly filter entries to find a business, gift, or treatment center. The software we built helps Just-a-Break operate more efficiently and effectively.</p>\r\n\r\n<p>I was responsible for testing feature code and managing deployment to our QA, Demo, and Production servers on Heroku. We worked in an agile environment, completing two-week sprints before each app demo with the client.</p>\r\n\r\n", github: "https://github.com/difference-engine-just-a-break/just-a-break", website: "", screencast: "", preview: "", image_1: "jab_businesses.png", image_2: "jab_gifts.png", image_3: "jab_users.png", image_4: ""}
 # ])
