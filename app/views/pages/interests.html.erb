@@ -1,5 +1,5 @@
 <!-- Container -->
-<div class="content-wrap">
+<div class="content-wrap" id="interests-page">
    <div id="resume" class="inner-content">
       <section id="page-title" class="inner-section">
          <div class="container-fluid nopadding wow fadeInRight" data-wow-delay="0.2s" data-wow-offset="10">
@@ -94,7 +94,7 @@
             <div class="wow fadeInDown" data-wow-delay="0.4s" data-wow-offset="10">
               <h3 class="font-accident-two-normal uppercase text-center">Sports</h3>
               <div class="dividewhite4"></div>
-              <p>Unfortunately I was not born with natural atheltic talent, but I do appreciate sports and support my teams! I love to play for fun and will play softball and volleyball with familt and friends in the summer, just don't expect me to be very good at it!</p>
+              <p>Unfortunately I was not born with natural athletic talent, but I do appreciate sports and support my teams! I love to play for fun and will play softball and volleyball with family and friends in the summer, just don't expect me to be your MVP!</p>
             </div>
             <div class="dividewhite4"></div>
             <div class="row">
@@ -175,32 +175,38 @@
             <p class="font-accident-one-normal">I am a huge fan of musical theater! HUGE. I can't sing, I can't act, I can't dance, but I very much enjoy a night out at the theater. I often travel to different cities around the world, just to see my favorite shows and musical actors perform live.</p>
             <div class="dividewhite1"></div>
             <h4 class="font-accident-one-normal uppercase text-center white-font">My Favorite Shows</h4>
-            <div class="row">
+            <div class="dividewhite4"></div>
+            <div class="row text-center">
               <div class="col-sm-4 nopadding">
-                <div class="progressbar" data-animate="false">
-                  <div></div>
-                  <h4 class="font-accident-one-normal uppercase">Everyday Rails: Testing with RSpec</h4>
-                  <p class="font-regular-normal">
-                    Code needs to be not only well written, but also well tested. Everyday Rails is a great combo of easy to understand instruction and relevant examples that I hope to incorporate into my projects.  
-                  </p>
+                <div class="interest-pic-div">
+                <%= image_tag "interest_pics/rebecca_400.png", class: "interest-pic interest-zoom" %>
                 </div>
               </div>
               <div class="col-sm-4 nopadding">
-                <div class="progressbar" data-animate="false"> 
-                  <div></div>
-                  <h4 class="font-accident-one-normal uppercase">Everyday Rails: Testing with RSpec</h4>
-                  <p class="font-regular-normal">
-                    Code needs to be not only well written, but also well tested. Everyday Rails is a great combo of easy to understand instruction and relevant examples that I hope to incorporate into my projects.  
-                  </p>
+                <div class="interest-pic-div">
+                <%= image_tag "interest_pics/waitress_400.png", class: "interest-pic interest-zoom" %>
                 </div>
               </div>
               <div class="col-sm-4 nopadding">
-                <div class="progressbar" data-animate="false">
-                  <div></div>
-                  <h4 class="font-accident-one-normal uppercase">Everyday Rails: Testing with RSpec</h4>
-                  <p class="font-regular-normal">
-                    Code needs to be not only well written, but also well tested. Everyday Rails is a great combo of easy to understand instruction and relevant examples that I hope to incorporate into my projects.  
-                  </p>
+                <div class="interest-pic-div">
+                <%= image_tag "interest_pics/cabaret_400.png", class: "interest-pic interest-zoom" %>
+                </div>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-sm-4 nopadding">
+                <div class="interest-pic-div">
+                <%= image_tag "interest_pics/next_to_normal_400.png", class: "interest-pic interest-zoom" %>
+                </div>
+              </div>
+              <div class="col-sm-4 nopadding">
+                <div class="interest-pic-div">
+                <%= image_tag "interest_pics/if_then_400.png", class: "interest-pic interest-zoom" %>
+                </div>
+              </div>
+              <div class="col-sm-4 nopadding">
+                <div class="interest-pic-div">
+                <%= image_tag "interest_pics/besuch_400.png", class: "interest-pic interest-zoom" %>
                 </div>
               </div>
             </div>
@@ -208,10 +214,6 @@
         </div>
       </div>
     </section>
-  
-
-
-
 
     <section id="timeline-vertical" class="inner-section">
       <div class="container-fluid nopadding">
@@ -271,3 +273,12 @@
     <!-- /Timeline Block -->
    </div>
 </div>
+
+<script>
+  $('.interest-pic').hover(function() {
+    $(this).css({ width: "100%", height: "100%" });
+  }, function() {
+    $(this).css({ width: "50%", height: "50%" });
+  });
+</script>
+
