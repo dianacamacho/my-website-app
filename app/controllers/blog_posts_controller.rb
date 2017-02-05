@@ -4,7 +4,7 @@ class BlogPostsController < ApplicationController
   before_action :set_title 
 
   def index
-    @blog_posts = BlogPost.all
+    @blog_posts = BlogPost.order(created_at: :desc)
     @page_title_details = "Blog"
   end
 

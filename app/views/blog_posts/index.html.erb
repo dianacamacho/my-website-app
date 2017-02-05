@@ -21,20 +21,29 @@
             <!-- /Blog post attributes #1 -->
             <% if post.images.any? %>
               <!-- FlexSlider -->
-              <div class="flex-container">
-                <div class="flexslider">
-                  <ul class="slides">
-                    <% post.images.each do |image| %>
-                      <li><img src="<%= image.url %>" alt="post-image" class="img-responsive"></li>
-                    <% end %>
-                  </ul>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="flex-container">
+                    <div class="flexslider">
+                      <ul class="slides">
+                        <% post.images.each do |image| %>
+                          <li><img src="<%= image.url %>" alt="post-image" class="img-responsive"></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="dividewhite2"></div>
               <!-- /FlexSlider -->
             <% end %>
-              <p><%= post.text %></p>
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <p><%= post.text %></p>
+              </div>
+            </div>
           </article>
+          <hr>
         <% end %>
       </div>
     </div>
