@@ -237,7 +237,7 @@
     top: 0;
     left: 0;
     background-color: #e8e8e8;
-    background: url("../images/section-bg05.jpg") no-repeat center center;
+    /*background: url("../images/section-bg05.jpg") no-repeat center center;*/
     background-size: cover;
     will-change: transform;
     z-index: -1; }

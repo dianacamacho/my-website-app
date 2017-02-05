@@ -1,6 +1,7 @@
 class EmailMessagesController < ApplicationController
   def new
     @email_message = EmailMessage.new
+    @page_title_details = "About / Contact"
   end
 
   def create

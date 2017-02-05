@@ -5,10 +5,12 @@ class BlogPostsController < ApplicationController
 
   def index
     @blog_posts = BlogPost.all
+    @page_title_details = "Blog"
   end
 
   def new
     @blog_post = BlogPost.new
+    @page_title_details = "New Post"
   end
 
   def create
@@ -23,12 +25,16 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    @page_title_details = "Blog"
   end
 
   def edit
+    @page_title_details = "Edit Post"
   end
 
   def update
+    @page_title_details = "Edit Post"
+    
     if @blog_post.update(blog_post_params)
       flash[:success] = "Blog post successfully updated!"
       redirect_to blog_post_path(@blog_post)

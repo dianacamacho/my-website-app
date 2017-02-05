@@ -4,10 +4,12 @@ class ProjectsController < ApplicationController
   before_action :set_title 
 
   def index
+    @page_title_details = "My Work"
   end
 
   def new
     @project = Project.new
+    @page_title_details = "New Project"
   end
 
   def create
@@ -22,12 +24,16 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @page_title_details = "My Work"
   end
 
   def edit
+    @page_title_details = "Edit Project"
   end
 
   def update
+    @page_title_details = "Edit Project"
+
     if @project.update(project_params)
       flash[:success] = "Project successfully updated!"
       redirect_to project_path(@project)
