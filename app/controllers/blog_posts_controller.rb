@@ -49,7 +49,7 @@ class BlogPostsController < ApplicationController
     end
 
     def blog_post_params
-      params.require(:blog_post).permit(:user_id, :title, :text)
+      params.require(:blog_post).permit(:user_id, :title, :text, { images: [] })
     end
 
     def set_title

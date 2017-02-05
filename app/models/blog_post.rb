@@ -1,5 +1,6 @@
 class BlogPost < ApplicationRecord
   belongs_to :user
+  mount_uploaders :images, ImageUploader
   validates :title, :text, presence: true
 
   def author

@@ -31,6 +31,9 @@ gem 'devise'
 gem 'mail_form'
 gem 'figaro'
 gem 'seed_dump'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
