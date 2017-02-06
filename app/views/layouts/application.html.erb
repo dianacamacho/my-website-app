@@ -101,6 +101,14 @@
 
         </div>
       </div>
+      
+      <% flash.each do |name, message| %>
+        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <%= message %>
+        </div>
+      <% end %>
+
       <% if @page_title_details.present? %>
          <div class="container">
            <div id="page-title">
@@ -113,13 +121,6 @@
 
     </header>
     <!-- /main-top -->
-
-    <% flash.each do |name, message| %>
-     <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-       <%= message %>
-     </div>
-   <% end %>
 
    <%= yield %>
 
