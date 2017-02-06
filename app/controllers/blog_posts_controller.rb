@@ -17,6 +17,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new(blog_post_params)
 
     if @blog_post.save
+      @blog_post.update(show_date: @blog_post.created_at)
       flash[:success] = "Blog post successfully created!"
       redirect_to blog_post_path(@blog_post)
     else
@@ -55,7 +56,7 @@ class BlogPostsController < ApplicationController
     end
 
     def blog_post_params
-      params.require(:blog_post).permit(:user_id, :title, :text, { images: [] })
+      params.require(:blog_post).permit(:user_id, :title, :text, :show_date, { images: [] })
     end
 
     def set_title

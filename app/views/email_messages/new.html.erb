@@ -1,26 +1,34 @@
-
-
 <div id="content">
-  <div class="e-block e-block-skin e-block-centered pb-20">
-    <div class="container">
+<!--   <div class="e-block e-block-skin e-block-centered pb-20">
+    <div class="container"> -->
       <!-- Decorative arrow -->
-      <div class="down-arrow">&nbsp;</div>
-    </div>
-  </div>
+      <!-- <div class="down-arrow">&nbsp;</div>
+    </div> -->
+  <!-- </div> -->
   <div class="row">
     <div class="col-md-12">
-      <div class="e-block e-block-skin e-block-centered ptb-20">
+      <div class="e-block e-block-skin e-block-centered">
         <div class="container">
           <div class="row">
             <div class="col-md-4 infoblock block-centered contact-address">
               <a href="#"><%= image_tag "section_pics/contacts_chicago.png", alt: "chicago" %></a>
-              <div class="dividewhite2"></div>
+              <!-- <div class="dividewhite2"></div> -->
               <!-- <h2 class="font-accident-one-light uppercase"><a href="#">Chicago</a></h2> -->
             </div>
-            <div class="col-md-8 text-left">
+            <div class="col-md-8 text-center">
               <p>
-                My name is Diana Camacho and I am a web developer in Chicago, IL.
+                Hey!<br><br>
+                My name is Diana Camacho and I am a web developer in Chicago, IL. Outside of work, I am a huge fan of musical theatre, travel, and the Chicago Cubs, which is probably what you'll see me post about the most.<br>
+                Thanks for visiting my personal website! 
+
               </p>
+              <br>
+              <div class="contact-icons">
+                <div class="contact-icon"><a href="https://twitter.com/deecodes" target="_blank" title="Twitter"><i class="fa fa-twitter single-icon"></i></a></div>
+                <div class="contact-icon"><a href="https://github.com/dianacamacho" target="_blank" title="GitHub"><i class="fa fa-github single-icon"></i></a></div>
+                <div class="contact-icon"><a href="https://www.linkedin.com/in/camachodiana" target="_blank" title="LinkedIn"><i class="fa fa-linkedin single-icon"></i></a></div>
+                <div class="contact-icon"><a href="https://s3.amazonaws.com/diana-camacho-resumes/diana_camacho_dev_resume_feb_2017.pdf" target="_blank" title="Resume"><i class="fa fa-briefcase single-icon"></i></a></div>
+              </div>
             </div>
           </div>
         </div>
@@ -53,7 +61,7 @@
                   </div>
                   <div class="field text-center">
                     <%= button_tag "Send Message", class: "btn btn-default btn-gr" %>
-                    <%= link_to "Cancel", "/", class: "btn btn-default btn-gr" %>
+                    <%#= link_to "Cancel", "/", class: "btn btn-default btn-gr" %>
                   </div>
                 <% end %>
               </div>

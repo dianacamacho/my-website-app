@@ -10,4 +10,8 @@ class BlogPost < ApplicationRecord
   def friendly_created_at
     created_at.strftime("%B %d, %Y")
   end
+
+  def published_on
+    show_date.strftime("%B %d, %Y")
+  end
 end

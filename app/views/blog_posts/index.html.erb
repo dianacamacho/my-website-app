@@ -8,42 +8,49 @@
       <div class="dividewhite6"></div>
 
       <div id="primary" role="main">
-        <% @blog_posts.each do |post| %>
-          <article class="post">
-            <!-- Blog post attributes #1 -->
-            <h3 class="post-title"><%= post.title %></h3>
-            <div class="post-attrib">
-              <!-- <div class="comment-baloon"><i class="fa fa-camera"></i></div> -->
-              <div class="post-data">
-                <div class="post-date"><%= post.friendly_created_at %></div>
+        <% if @blog_posts.any? %>
+          <% @blog_posts.each do |post| %>
+            <article class="post">
+              <!-- Blog post attributes #1 -->
+              <h3 class="post-title"><%= link_to post.title, blog_post_path(post) %></h3>
+              <div class="post-attrib">
+                <!-- <div class="comment-baloon"><i class="fa fa-camera"></i></div> -->
+                <div class="post-data">
+                  <div class="post-date"><%= post.published_on %></div>
+                </div>
               </div>
-            </div>
-            <!-- /Blog post attributes #1 -->
-            <% if post.images.any? %>
-              <!-- FlexSlider -->
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                  <div class="flex-container">
-                    <div class="flexslider">
-                      <ul class="slides">
-                        <% post.images.each do |image| %>
-                          <li><img src="<%= image.url %>" alt="post-image" class="img-responsive"></li>
-                        <% end %>
-                      </ul>
+              <!-- /Blog post attributes #1 -->
+              <% if post.images.any? %>
+                <!-- FlexSlider -->
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2">
+                    <div class="flex-container">
+                      <div class="flexslider">
+                        <ul class="slides">
+                          <% post.images.each do |image| %>
+                            <li><img src="<%= image.url %>" alt="post-image" class="img-responsive"></li>
+                          <% end %>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="dividewhite2"></div>
+                <!-- /FlexSlider -->
+              <% end %>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <p><%= post.text %></p>
+                </div>
               </div>
-              <div class="dividewhite2"></div>
-              <!-- /FlexSlider -->
-            <% end %>
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <p><%= post.text %></p>
-              </div>
-            </div>
+            </article>
+            <hr>
+          <% end %>
+        <% else %>
+          <article class="post">
+            <!-- Blog post attributes #1 -->
+            <h3 class="post-title text-center">Under Construction! Check back later.</h3>
           </article>
-          <hr>
         <% end %>
       </div>
     </div>

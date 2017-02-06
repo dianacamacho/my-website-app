@@ -45,6 +45,9 @@
     <script src="/assets/vendor/modernizr/js/modernizr.js"                          type="text/javascript"></script>
     <script src="/assets/custom/js/script.js"                                       type="text/javascript"></script>
 
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+    <script src="https://unpkg.com/flatpickr"></script>
+
 
    <!-- Fonts -->
    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
@@ -57,9 +60,10 @@
    <div id="sub-top-light">
       <div class="container">
         <div class="top-contacts">
-            <div><a href="https://twitter.com/deecodes" target="_blank"><i class="fa fa-twitter"></i></a></div>
-            <div><a href="https://github.com/dianacamacho" target="_blank"><i class="fa fa-github"></i></a></div>
-            <div><a href="https://www.linkedin.com/in/camachodiana" target="_blank"><i class="fa fa-linkedin"></i></a></div>
+            <div><a href="https://twitter.com/deecodes" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></div>
+            <div><a href="https://github.com/dianacamacho" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></div>
+            <div><a href="https://www.linkedin.com/in/camachodiana" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></div>
+            <div><a href="https://s3.amazonaws.com/diana-camacho-resumes/diana_camacho_dev_resume_feb_2017.pdf" target="_blank" title="Resume"><i class="fa fa-briefcase"></i></a></div>
         </div>
       </div>
    </div>
@@ -79,8 +83,8 @@
 
             <ul class="sf-menu clearfix" id="example">
                <li><a href="/">Blog</a></li>
-               <li><%= link_to "Work", projects_path %></li>
                <li><%= link_to "About", about_path %></li>
+               <li><%= link_to "Work", projects_path %></li>
                <% if user_signed_in? %>
                  <li><a href="#">Account</a>
                    <div class="mobnav-subarrow"></div>

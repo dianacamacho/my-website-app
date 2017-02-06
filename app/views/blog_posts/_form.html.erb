@@ -8,6 +8,10 @@
     <!--<label for="name">Name:</label>-->
     <%= f.text_area :text, autofocus: true, size: "20x10", placeholder: "Start writing your post!" %>
   </div>
+  <div class="field">
+    <!--<label for="name">Name:</label>-->
+    <%= f.datetime_field :show_date, class: "flatpickr" %>
+  </div>
    <div class="field">
     <%= f.file_field :images, multiple: true %>
   </div>
