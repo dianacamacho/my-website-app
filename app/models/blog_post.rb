@@ -2,6 +2,7 @@ class BlogPost < ApplicationRecord
   belongs_to :user
   mount_uploaders :images, ImageUploader
   validates :title, :text, presence: true
+  scope :published, -> { where('show_date <= ?', Time.zone.now) }
 
   def author
     "#{user.first_name} #{user.last_name}"

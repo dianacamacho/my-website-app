@@ -4,7 +4,7 @@ class BlogPostsController < ApplicationController
   before_action :set_title 
 
   def index
-    @blog_posts = BlogPost.order(created_at: :desc)
+    @blog_posts = BlogPost.published.order(created_at: :desc)
     @page_title_details = "Blog"
   end
 
@@ -17,7 +17,9 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new(blog_post_params)
 
     if @blog_post.save
-      @blog_post.update(show_date: @blog_post.created_at)
+      unless blog_post_params[:show_date].present?
+        @blog_post.update(show_date: @blog_post.created_at)
+      end
       flash[:success] = "Blog post successfully created!"
       redirect_to blog_post_path(@blog_post)
     else
