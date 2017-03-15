@@ -10,7 +10,7 @@
   </div>
   <div class="field">
     <!--<label for="name">Name:</label>-->
-    <%= f.datetime_field :show_date, placeholder: "Show Date / Time", class: "flatpickr" %>
+    <%= f.datetime_field :show_date, placeholder: "Show Date / Time", "data-alt-input" => "true", "data-alt-format" => "M d, Y h:i K", class: "flatpickr" %>
   </div>
    <div class="field">
     <%= f.file_field :images, multiple: true %>
