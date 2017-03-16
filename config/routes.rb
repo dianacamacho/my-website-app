@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   root "email_messages#new"
   
-  get '/about' => 'email_messages#new', :as => 'about'
+  get '/about' => 'email_messages#new', as: :about
+  get '/blog' => 'blog_posts#index', as: :blog
   resources :blog_posts
   resources :projects
   resources :email_messages, only: [:create]

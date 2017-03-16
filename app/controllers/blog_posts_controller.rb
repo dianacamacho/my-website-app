@@ -1,7 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_title 
 
   def index
     @blog_posts = BlogPost.published.order(created_at: :desc)
@@ -59,9 +58,5 @@ class BlogPostsController < ApplicationController
 
     def blog_post_params
       params.require(:blog_post).permit(:user_id, :title, :text, :show_date, { images: [] })
-    end
-
-    def set_title
-      @title = "Blog"
     end
 end

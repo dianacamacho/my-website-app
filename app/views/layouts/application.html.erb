@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><%= "Diana Camacho | #{@title}" || "Diana Camacho" %></title>
+    <title><%= full_title(yield(:title)) %></title>
 
     <meta name="description" content="Personal website of Diana Camacho">
     <meta name="keywords" content="blog, personal">
@@ -70,7 +70,6 @@
 
     <!-- main-top -->
     <header id="header-wrapper" class="sticky-menu-light e-bg-section05">
-
       <div class="sticky-header header-light" role="navigation">
         <div class="container">
           <div id="site-title"><h1 class="font-accident-one-bold"><a href="/">Diana Camacho</a></h1></div>
@@ -78,7 +77,7 @@
 
           <nav id="main-menu" class="site-navigation primary-navigation" role="navigation">
             <ul class="sf-menu clearfix" id="example">
-               <li><a href="/">Blog</a></li>
+               <li><%= link_to "Blog", blog_path %></li>
                <li><%= link_to "About", about_path %></li>
                <li><%= link_to "Work", projects_path %></li>
                <% if user_signed_in? %>

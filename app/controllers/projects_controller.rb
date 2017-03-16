@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_title 
 
   def index
     @projects = Project.all
@@ -69,9 +68,5 @@ class ProjectsController < ApplicationController
         :image_4,
         technology_ids: []
       )
-    end
-
-    def set_title
-      @title = "Portfolio"
     end
 end
