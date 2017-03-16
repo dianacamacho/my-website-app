@@ -11,15 +11,14 @@
         <% if @blog_posts.any? %>
           <% @blog_posts.each do |post| %>
             <article class="post">
-              <!-- Blog post attributes #1 -->
               <h3 class="post-title"><%= link_to post.title, blog_post_path(post) %></h3>
+              
               <div class="post-attrib">
-                <!-- <div class="comment-baloon"><i class="fa fa-camera"></i></div> -->
                 <div class="post-data">
                   <div class="post-date"><%= post.published_on %></div>
                 </div>
               </div>
-              <!-- /Blog post attributes #1 -->
+
               <% if post.images.any? %>
                 <div class="blog-slider-images">
                   <% post.images.each do |image| %>
@@ -27,6 +26,7 @@
                   <% end %>
                 </div>
               <% end %>
+
               <div class="blog-text">
                 <p><%= sanitize(post.shortened_text) %></p>
               </div>
@@ -35,7 +35,6 @@
           <% end %>
         <% else %>
           <article class="post">
-            <!-- Blog post attributes #1 -->
             <h3 class="post-title text-center">Under Construction! Check back later.</h3>
           </article>
         <% end %>
