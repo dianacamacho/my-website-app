@@ -48,6 +48,7 @@ class BlogPostsController < ApplicationController
 
   def destroy
     @blog_post.destroy
+    @blog_post.remove_images!
     flash[:success] = "Blog post successfully deleted!"
     redirect_to blog_posts_path
   end
