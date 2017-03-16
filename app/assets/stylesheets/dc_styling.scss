@@ -1,10 +1,26 @@
+/********** Formatting **********/ 
+
 .lowercase {
   text-transform: lowercase !important;
 }
 
+.ptb-20 {
+  padding: 20px 0 !important;
+}
+
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+/********** End Formatting **********/ 
+
+/********** Background Images **********/ 
+
 .e-bg-section05::before {
   background: image-url("section_pics/roman_forum.JPG") no-repeat center center;
 }
+
+/********** End Background Images **********/ 
 
 // .flexslider {
 //   .slides {
@@ -18,13 +34,8 @@
   width: 100%;
 }
 
-.ptb-20 {
-  padding: 20px 0 !important;
-}
 
-.pb-20 {
-  padding-bottom: 20px !important;
-}
+/********** Icons **********/
 
 .contact-icon {
   display: inline-block;
@@ -35,3 +46,29 @@
   color: #333;
   font-size: 20px !important;
 }
+
+/********** End Icons **********/
+
+
+/********** Blog **********/
+
+.blog-index-images {
+  white-space:nowrap;
+  overflow-x:auto;
+}
+
+.blog-index-img {
+  height: 300px;
+  width: auto;
+}
+
+.blog-show-img {
+  height: 500px;
+  width: auto;
+}
+
+.blog-text {
+  margin: 20px 0;
+}
+
+/********** End Blog **********/

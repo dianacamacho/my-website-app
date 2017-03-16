@@ -8,8 +8,6 @@
       <!-- /Decorative arrow -->
 
       <div class="dividewhite6"></div>
-
-      <div id="primary" role="main">
         <% if @blog_posts.any? %>
           <% @blog_posts.each do |post| %>
             <article class="post">
@@ -23,27 +21,14 @@
               </div>
               <!-- /Blog post attributes #1 -->
               <% if post.images.any? %>
-                <!-- FlexSlider -->
-                <div class="row">
-                  <div class="col-md-8 col-md-offset-2">
-                    <div class="flex-container">
-                      <div class="flexslider">
-                        <ul class="slides">
-                          <% post.images.each do |image| %>
-                            <li><img src="<%= image.url %>" alt="post-image" class="img-responsive"></li>
-                          <% end %>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                <div class="blog-index-images">
+                  <% post.images.each do |image| %>
+                    <a class="example-image-link" href="<%= image.url %>" data-lightbox="photo-set-<%= post.id %>"><img class="blog-index-img" src="<%= image.url %>" alt=""/></a>
+                  <% end %>
                 </div>
-                <div class="dividewhite2"></div>
-                <!-- /FlexSlider -->
               <% end %>
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                  <p><%= sanitize(post.shortened_text) %></p>
-                </div>
+              <div class="blog-text">
+                <p><%= sanitize(post.shortened_text) %></p>
               </div>
             </article>
             <hr>
