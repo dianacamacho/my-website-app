@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     patch '/users(.:format)' => 'devise/registrations#update'
   end
 
-  root "blog_posts#index"
+  root "email_messages#new"
   
   get '/about' => 'email_messages#new', :as => 'about'
   resources :blog_posts
