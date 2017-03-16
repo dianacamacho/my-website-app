@@ -1,15 +1,12 @@
 <%= form_for(blog_post, html: { :class => "wpcf7-form" }) do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="field">
-    <!--<label for="name">Name:</label>-->
     <%= f.text_field :title, autofocus: true, placeholder: "Title" %>
   </div>
   <div class="field">
-    <!--<label for="name">Name:</label>-->
     <%= f.text_area :text, autofocus: true, size: "20x10", placeholder: "Start writing your post!" %>
   </div>
   <div class="field">
-    <!--<label for="name">Name:</label>-->
     <%= f.datetime_field :show_date, placeholder: "Show Date / Time", "data-alt-input" => "true", "data-alt-format" => "M d, Y h:i K", class: "flatpickr" %>
   </div>
    <div class="field">

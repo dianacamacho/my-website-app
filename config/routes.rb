@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, skip: [:registrations, :sessions]
+  
   as :user do
     get '/sign_in' => 'devise/sessions#new', :as => 'new_user_session'
     post '/sign_in' => 'devise/sessions#create', :as => 'user_session'
@@ -10,11 +11,8 @@ Rails.application.routes.draw do
   end
 
   root "blog_posts#index"
-  # get '/resume' => 'pages#resume', :as => 'resume'
-  # get '/portfolio' => 'projects#index', :as => 'portfolio'
-  # get '/interests' => 'pages#interests', :as => 'interests'
-  get '/about' => 'email_messages#new', :as => 'about'
   
+  get '/about' => 'email_messages#new', :as => 'about'
   resources :blog_posts
   resources :projects
   resources :email_messages, only: [:create]

@@ -51,9 +51,8 @@
 
    <!-- Fonts -->
    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
-   
-
   </head>
+  
   <body>
 
     <!-- sub-top -->
@@ -63,7 +62,7 @@
             <div><a href="https://twitter.com/deecodes" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></div>
             <div><a href="https://github.com/dianacamacho" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></div>
             <div><a href="https://www.linkedin.com/in/camachodiana" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></div>
-            <div><a href="https://s3.amazonaws.com/diana-camacho-resumes/diana_camacho_dev_resume_feb_2017.pdf" target="_blank" title="Resume"><i class="fa fa-briefcase"></i></a></div>
+            <div><a href="<%= ENV['aws_resume_link'] %>" target="_blank" title="Resume"><i class="fa fa-briefcase"></i></a></div>
         </div>
       </div>
    </div>
@@ -74,13 +73,10 @@
 
       <div class="sticky-header header-light" role="navigation">
         <div class="container">
-
           <div id="site-title"><h1 class="font-accident-one-bold"><a href="/">Diana Camacho</a></h1></div>
-
           <div id="mobnav-btn"><i class="fa fa-bars"></i></div>
 
           <nav id="main-menu" class="site-navigation primary-navigation" role="navigation">
-
             <ul class="sf-menu clearfix" id="example">
                <li><a href="/">Blog</a></li>
                <li><%= link_to "About", about_path %></li>
@@ -96,9 +92,7 @@
                  </li>
                <% end %>
             </ul>
-
           </nav>
-
         </div>
       </div>
       
@@ -118,18 +112,13 @@
            </div>
          </div>
       <% end %>
-
     </header>
     <!-- /main-top -->
 
    <%= yield %>
 
-    <!-- footer -->
-    <!-- /footer -->
-
     <!-- Back to Top -->
     <div id="back-top"><a href="#top"></a></div>
     <!-- /Back to Top -->
-
   </body>
 </html>
