@@ -1,0 +1,502 @@
+/* Preload images */
+/* line 2, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+body:after {
+  content: url("close.png") url("loading.gif") url("prev.png") url("next.png");
+  display: none;
+}
+
+/* line 7, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+body.lb-disable-scrolling {
+  overflow: hidden;
+}
+
+/* line 11, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+/* line 22, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+
+/* line 32, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+  max-height: none;
+  border-radius: 3px;
+  /* Image border */
+  border: 4px solid white;
+}
+
+/* line 43, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightbox a img {
+  border: none;
+}
+
+/* line 47, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-outerContainer {
+  position: relative;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 4px;
+  /* Background color behind image.
+     This is visible during transitions. */
+  background-color: white;
+}
+
+/* line 60, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 66, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 76, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url("loading.gif") no-repeat;
+}
+
+/* line 84, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 93, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 97, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a {
+  outline: none;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+}
+
+/* line 102, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-prev, .lb-next {
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+/* line 108, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-prev {
+  width: 34%;
+  left: 0;
+  float: left;
+  background: url("prev.png") left 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+/* line 121, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-prev:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 126, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-next {
+  width: 64%;
+  right: 0;
+  float: right;
+  background: url("next.png") right 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+/* line 139, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-next:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 144, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 157, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 163, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data {
+  padding: 0 4px;
+  color: #ccc;
+}
+
+/* line 168, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+/* line 175, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+/* line 181, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-caption a {
+  color: #4ae;
+}
+
+/* line 185, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+
+/* line 193, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url("close.png") top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* line 209, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 6, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/blog_posts.scss */
+#blog-show .blog-title-info {
+  padding: 50px 50px 10px 50px;
+}
+/* line 10, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/blog_posts.scss */
+#blog-show .blog-post {
+  padding-top: 5px;
+}
+/********** Formatting **********/
+/* line 4, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+/* line 8, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.ptb-20 {
+  padding: 20px 0 !important;
+}
+
+/* line 12, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+/********** End Formatting **********/
+/********** Background Images **********/
+/* line 20, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.e-bg-section05::before {
+  background: url(/assets/section_pics/roman_forum-23fd270061fed3ac2341c5b3578784dc83ecf39f349990ef369c302bee744469.JPG) no-repeat center center;
+}
+
+/********** End Background Images **********/
+/* line 33, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.slider-img {
+  height: 100%;
+  width: 100%;
+}
+
+/********** Icons **********/
+/* line 41, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.contact-icon {
+  display: inline-block;
+  margin: 10px;
+}
+
+/* line 46, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.single-icon {
+  color: #333;
+  font-size: 20px !important;
+}
+
+/********** End Icons **********/
+/********** Blog **********/
+/* line 56, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blog-index-images {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* line 61, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blog-index-img {
+  height: 300px;
+  width: auto;
+}
+
+/* line 66, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blog-show-img {
+  height: 500px;
+  width: auto;
+}
+
+/* line 71, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blog-text {
+  margin: 20px 0;
+}
+
+/********** End Blog **********/
+/* line 1, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.inner-section.feedback.feedback-light {
+  padding-top: 0px;
+}
+
+/* line 5, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.devise-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* line 10, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#homesection .m-details i.followme::before {
+  margin: 0px;
+  padding: 5px 7px 5px 8px;
+  border: solid 2px #2f2f2f;
+  border-radius: 20%;
+}
+
+/* line 17, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#top-navigation .ident .vc-photo {
+  min-height: 360px;
+  background: url(/assets/user_photo_1-e128df922181ccea3a68fbb59250588d1c0dba7ca5ab714243f62c786e81cbad.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url("/assets/custom/images/grayscale.svg");
+  /* Firefox 4+ */
+  filter: gray;
+  /* IE 6-9 */
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+/* line 37, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#top-navigation .ident .vc-photo a {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 42, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#top-navigation .ident:hover .vc-photo {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: none;
+}
+
+/* line 50, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg01 {
+  background: url(/assets/custom/images/timeline-1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 56, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg01-01 {
+  background: url(/images/resume_pics/acltc_class.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 62, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg02 {
+  background: url(/assets/custom/images/timeline-2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 68, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg02-01 {
+  background: url(/images/resume_pics/acltc_code-min.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 74, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg03 {
+  background: url(/assets/custom/images/timeline-3.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 80, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg03-01 {
+  background: url(/images/resume_pics/computer.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 86, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg04 {
+  background: url(/assets/custom/images/timeline-4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 92, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg04-01 {
+  background: url(/assets/custom/images/timeline-4-01.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 98, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+div.col-md-8.circle-skills.nopadding.ui-block-color03 {
+  min-height: 510px;
+}
+
+/* line 102, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.carousel-inner > .item > img {
+  margin: auto;
+}
+
+/* line 106, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.white-font {
+  color: #fff;
+}
+/* line 6, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-title-info {
+  padding: 50px 50px 10px 50px;
+}
+/* line 10, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-post {
+  padding-top: 5px;
+}
+/* line 13, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-post .screencap-heading {
+  color: #e74c3c;
+  text-transform: uppercase;
+}
+/* line 18, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-post .project-description {
+  margin-top: 10px;
+}
+/* line 23, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .post-tag {
+  color: #e74c3c;
+}
+/* line 28, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .carousel-inner .indiv-images {
+  max-height: 600px;
+}
+/* line 33, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-links {
+  margin: auto;
+}
+/* line 37, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .link-wrapper {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  border: solid 2px #2f2f2f;
+  border-radius: 20%;
+  margin: 0px 5px;
+}
+/* line 46, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show i.link-icon {
+  font-size: 30px;
+  padding: 7px 0px 0px 1px;
+}
+/* line 51, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .list-inline.social {
+  margin-top: 15px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
