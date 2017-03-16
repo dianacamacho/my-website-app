@@ -14,7 +14,8 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new(blog_post_params)
-
+    @page_title_details = "New Post"
+    
     if @blog_post.save
       unless blog_post_params[:show_date].present?
         @blog_post.update(show_date: @blog_post.created_at)
