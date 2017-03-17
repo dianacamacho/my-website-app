@@ -1,11 +1,11 @@
 Project.create!([
-  { user_id: 1, name: "DevHero",
-    project_type: "Web App",
-    client: "Actualize", 
-    description: "<p>I developed this app as a hiring/networking tool for employers and alumni of Actualize coding bootcamp.</p>\r\n\r\n<p>Students can create a profile including information about their tech skills, projects, job preferences, etc. to show off their individual skills to potential employers. Employers create profiles for their companies and can log in to search the alumni database for potential hires, who they can email via the app to begin a conversation.</p>\r\n\r\n<p>It is built using Ruby on Rails, while AngularJS provides the ability to search student profiles and dynamically filter profiles by technology/skills.</p>", 
-    github: "https://github.com/the-difference-engine/network-app", 
-    website: "http://devhero.io" 
-  },
+  # { user_id: 1, name: "DevHero",
+  #   project_type: "Web App",
+  #   client: "Actualize", 
+  #   description: "<p>I developed this app as a hiring/networking tool for employers and alumni of Actualize coding bootcamp.</p>\r\n\r\n<p>Students can create a profile including information about their tech skills, projects, job preferences, etc. to show off their individual skills to potential employers. Employers create profiles for their companies and can log in to search the alumni database for potential hires, who they can email via the app to begin a conversation.</p>\r\n\r\n<p>It is built using Ruby on Rails, while AngularJS provides the ability to search student profiles and dynamically filter profiles by technology/skills.</p>", 
+  #   github: "https://github.com/the-difference-engine/network-app", 
+  #   website: "http://devhero.io" 
+  # },
   { user_id: 1, 
     name: "Seat Scoop",
     project_type: "Web App, Actualize Capstone", 
