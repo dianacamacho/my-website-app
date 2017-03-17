@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    @page_title_details = "My Work"
+    @page_title_details = "Projects"
   end
 
   def new
@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @page_title_details = "My Work"
+    @page_title_details = "Projects"
   end
 
   def edit

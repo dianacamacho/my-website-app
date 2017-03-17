@@ -14,7 +14,13 @@ class Project < ApplicationRecord
 
   def main_image
     if images.any?
-      main_image_link = images.select {|image| image.url.include?("header_image")}.first.index.url
+      image_link = images.select {|image| image.url.include?("header_image")}.first.show.url
+    end
+  end
+
+  def index_image
+    if images.any?
+      image_link = images.select {|image| image.url.include?("header_image")}.first.index.url
     end
   end
 end

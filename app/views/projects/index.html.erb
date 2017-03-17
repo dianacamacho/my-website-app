@@ -6,25 +6,13 @@
     <div class="dividewhite2"></div>
 
     <% if @projects.any? %>
-  <!--     <div class="container">
-        <div id="isotope-filters" class="port-filter block-centered">
-          <ul>
-            <li><a href="#cat1" data-filter="*">All</a></li>
-            <li><a href="#cat2" data-filter=".web">Web Design</a></li>
-            <li><a href="#cat3" data-filter=".marketing">Online Marketing</a></li>
-            <li><a href="#cat4" data-filter=".seo">SEO</a></li>
-          </ul>
-        </div>
-        <div class="dividewhite4"></div>
-      </div> -->
-
       <div class="container isotope-container">
         <div id="posts" class="row">
           <% @projects.each do |project| %>
             <div class="item web col-md-4">
               <div class="item-wrap">
                 <figure class="effect-goliath">
-                  <img src="/assets/custom/images/magazine/01.jpg" alt="project-image"/>
+                  <img src="<%= project.index_image %>" alt="project-image"/>
                   <figcaption>
                     <h3><span><%= project.name %></span></h3>
                     <!-- <p>insert short project description</p> -->

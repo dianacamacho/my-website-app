@@ -12,6 +12,7 @@
             <div class="col-md-8">
               <img src="<%= @project.main_image %>" class="img-responsive" alt="img11"/>
             </div>
+            
             <div class="col-md-4">
               <div class="row">
                 <div class="col-md-11 col-md-offset-1">
@@ -26,16 +27,16 @@
                         <% end %>
                         <div class="row">
                         <% if @project.website.present? %>
-                          <li class="col-md-4"><span><%= link_to "Website", @project.website, target: "_blank" %></span></li>
+                          <li class="col-xs-4"><span><%= link_to "Website", @project.website, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
                         <% end %>
                         <% if @project.github.present? %>
-                          <li class="col-md-4"><span><%= link_to "GitHub", @project.github, target: "_blank" %></span></li>
+                          <li class="col-xs-4"><span><%= link_to "GitHub", @project.github, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
                         <% end %>
                         <% if @project.screencast.present? %>
-                          <li class="col-md-4"><span><%= link_to "Screencast", @project.screencast, target: "_blank" %></span></li>
+                          <li class="col-xs-4"><span><%= link_to "Screencast", @project.screencast, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
                         <% end %>
                         <% if @project.preview.present? %>
-                          <li class="col-md-4"><span><%= link_to "Preview", @project.preview, target: "_blank" %></span></li>
+                          <li class="col-xs-4"><span><%= link_to "Preview", @project.preview, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
                         <% end %>
                         </div>
                       </ul>
@@ -71,7 +72,9 @@
 
         <div class="row">
           <div class="col-md-12">
-            <h3 class="font-accident-one-bold">Images</h3>
+            <h5 class="font-accident-one-medium uppercase">Images</h5>
+            <div class="dividewhite2"></div>
+
             <div class="slider-images">
               <% @project.images.each do |image| %>
                 <a class="example-image-link" href="<%= image.url %>" data-lightbox="photo-set-<%= @project.id %>"><img class="project-show-img" src="<%= image.slider.url %>" alt=""/></a>
@@ -80,6 +83,25 @@
           </div>
         </div>
       <% end %>
+
+      <% if current_user %>
+        <div class="dividewhite2"></div>
+
+        <div class="text-center">
+          <%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-lg btn-darker" %>
+          <%= link_to "Delete Project", project_path(@project), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-lg btn-darker" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+<script>
+  $(function(){
+    $('html, body').animate({
+        scrollTop: $('#content').offset().top
+    }, 2000);
+    return false;
+  });
+</script>
+
