@@ -44,6 +44,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
+    @project.remove_images!
     flash[:success] = "Project successfully deleted!"
     redirect_to projects_path
   end
@@ -62,6 +63,7 @@ class ProjectsController < ApplicationController
         :website,
         :screencast,
         :preview,
+        :project_type,
         { images: [] },
         technology_ids: []
       )

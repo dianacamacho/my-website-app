@@ -6,32 +6,37 @@
       <div class="e-block e-block-light e-bg-light-texture" data-stellar-background-ratio="0.5">
         <div class="row">
           <div class="width-60 e-block-centered">
-            <h3 class="uppercase">Post Details</h3>
+            <h3 class="uppercase">Project Details</h3>
             <div class="dividewhite2"></div>
             <div class="contacts-form">
               <div>
                 <%= form_for(@project, html: {:class => "wpcf7-form" }) do |f| %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
-                  <div class="field">
-                    <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
+                  <div class="row">
+                    <div class="field col-md-6">
+                      <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
+                    </div>
+                    <div class="field col-md-6">
+                      <%= f.text_field :project_type, autofocus: true, placeholder: "Type" %>
+                    </div>
                   </div>
                   <div class="field">
                     <%= f.text_area :description, autofocus: true, size: "10x5", placeholder: "Describe the project!" %>
                   </div>
                   <div class="row">
                     <div class="field col-md-6">
-                      <%= f.text_field :github, autofocus: true, placeholder: "GitHub repo url" %>
+                      <%= f.text_field :github, autofocus: true, placeholder: "GitHub repo url (full http)" %>
                     </div>
                     <div class="field col-md-6">
-                      <%= f.text_field :website, autofocus: true, placeholder: "Live website url" %>
+                      <%= f.text_field :website, autofocus: true, placeholder: "Live website url (full http)" %>
                     </div>
                   </div>
                   <div class="row">
                     <div class="field col-md-6">
-                      <%= f.text_field :screencast, autofocus: true, placeholder: "Youtube screencast url" %>
+                      <%= f.text_field :screencast, autofocus: true, placeholder: "Youtube screencast url (full http)" %>
                     </div>
                     <div class="field col-md-6">
-                      <%= f.text_field :preview, autofocus: true, placeholder: "Preview page url" %>
+                      <%= f.text_field :preview, autofocus: true, placeholder: "Preview page url (full http)" %>
                     </div>
                   </div>
                   <div class="row">

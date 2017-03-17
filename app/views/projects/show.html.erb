@@ -16,16 +16,28 @@
               <div class="row">
                 <div class="col-md-11 col-md-offset-1">
                   <div class="portfolio-item-data">
-                    <!-- <h5 class="font-accident-one-medium uppercase">Project Data</h5>
+                    <h5 class="font-accident-one-medium uppercase">Project Info</h5>
                     <div class="infoblock">
                       <hr>
                       <ul>
-                        <li>Project Category: <span>Web Design</span></li>
-                        <li>Client: <span>Ergotron LLC</span></li>
-                        <li>Start Date: <span>11.14.2014</span></li>
-                        <li>End Date: <span>12.02.2014</span></li>
+                        <li>Type: <span><%= @project.project_type %></span></li>
+                        <% if @project.client.present? %>
+                          <li>Client: <span><%= @project.client %></span></li>
+                        <% end %>
+                        <% if @project.website.present? %>
+                          <li><%= link_to "Website", @project.website %></li>
+                        <% end %>
+                        <% if @project.github.present? %>
+                          <li><%= link_to "GitHub", @project.github %></li>
+                        <% end %>
+                        <% if @project.screencast.present? %>
+                          <li><%= link_to "Screencast", @project.screencast %></li>
+                        <% end %>
+                        <% if @project.website.present? %>
+                          <li><%= link_to "Preview", @project.preview %></li>
+                        <% end %>
                       </ul>
-                    </div> -->
+                    </div>
                     <h5 class="font-accident-one-medium uppercase">Technologies</h5>
                     <div class="infoblock">
                       <hr>
@@ -48,14 +60,7 @@
       <div class="row">
         <div class="col-md-12">
           <h3 class="font-accident-one-medium uppercase">Overview</h3>
-          <p>
-            The organization was founded by Mrs. Ethel Brogan, a native of Armagh,
-            Northern Ireland who learned Irish by spending one month each summer in the Gaeltacht.
-            She emigrated to New York City in 1946 and eventually moved to upstate New York.
-            In the United States, Brogan began teaching Irish classes for the benefit of interested neighbors.
-            In 1981, she arranged the first "Gaeltacht Weekend" in New York for students to improve their
-            Irish language skills through total immersion.
-          </p>
+          <p><%= @project.description %></p>
         </div>
       </div>
     </div>
