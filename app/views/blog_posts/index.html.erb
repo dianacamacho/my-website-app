@@ -18,7 +18,7 @@
               </div>
 
               <% if post.images.any? %>
-                <div class="blog-slider-images">
+                <div class="slider-images">
                   <% post.images.each do |image| %>
                     <a class="example-image-link" href="<%= image.url %>" data-lightbox="photo-set-<%= post.id %>"><img class="blog-index-img" src="<%= image.slider.url %>" alt=""/></a>
                   <% end %>

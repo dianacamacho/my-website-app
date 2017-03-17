@@ -52,7 +52,7 @@
 
 /********** Blog **********/
 
-.blog-slider-images {
+.slider-images {
   white-space:nowrap;
   overflow-x:auto;
 }
@@ -93,4 +93,9 @@
   .tech-select {
     text-align: left !important;
   }
+}
+
+.project-show-img {
+  height: 200px;
+  width: auto;
 }

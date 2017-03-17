@@ -2,7 +2,7 @@ class Project < ApplicationRecord
   has_and_belongs_to_many :technologies, dependent: :destroy
   belongs_to :user
   mount_uploaders :images, ProjectImageUploader
-  validates :name, :type, :description, presence: true
+  validates :name, :project_type, :description, presence: true
 
   def author
     "#{user.first_name} #{user.last_name}"
@@ -10,5 +10,11 @@ class Project < ApplicationRecord
 
   def friendly_created_at
     created_at.strftime("%B %d, %Y")
+  end
+
+  def main_image
+    if images.any?
+      main_image_link = images.select {|image| image.url.include?("header_image")}.first.index.url
+    end
   end
 end
