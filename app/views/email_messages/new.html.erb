@@ -1,12 +1,6 @@
 <% provide(:title, @page_title_details) %>
 
 <div id="content">
-<!--   <div class="e-block e-block-skin e-block-centered pb-20">
-    <div class="container"> -->
-      <!-- Decorative arrow -->
-      <!-- <div class="down-arrow">&nbsp;</div>
-    </div> -->
-  <!-- </div> -->
   <div class="row">
     <div class="col-md-12">
       <div class="e-block e-block-skin e-block-centered">
@@ -68,4 +62,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(function(){
+    $('html, body').animate({
+        scrollTop: $('#content').offset().top
+    }, 2000);
+    return false;
+  });
+</script>
 
