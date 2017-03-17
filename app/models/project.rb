@@ -1,8 +1,8 @@
 class Project < ApplicationRecord
   has_and_belongs_to_many :technologies, dependent: :destroy
   belongs_to :user
-
-  validates :name, :description, :image_1, presence: true
+  mount_uploaders :images, ProjectImageUploader
+  validates :name, :description, presence: true
 
   def author
     "#{user.first_name} #{user.last_name}"
@@ -12,8 +12,11 @@ class Project < ApplicationRecord
     created_at.strftime("%B %d, %Y")
   end
 
-  def images
-    project_images = [image_1, image_2, image_3, image_4]
-    project_images.reject { |photo| photo == "" || photo == nil }
+  def technology_list
+    list = ""
+    technologies.each_with_index do |tech, index|
+      list += tech.name + ", "
+    end
+    list[0..-3]
   end
 end

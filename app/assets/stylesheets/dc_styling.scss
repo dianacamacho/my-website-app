@@ -72,3 +72,25 @@
 }
 
 /********** End Blog **********/
+
+.chosen-container input[type="text"] {
+  width: 100% !important;
+  border-radius: 0 !important;
+  font: 12px/1.6 "Oxygen", sans-serif, Helvetica, Arial, sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  margin-bottom: 15px !important ;
+
+}
+
+.chosen-choices {
+    // padding: 6px 10px !important;
+    border: 1px solid #666 !important;
+    background: #fff !important;
+}
+
+.e-block-centered {
+  .tech-select {
+    text-align: left !important;
+  }
+}

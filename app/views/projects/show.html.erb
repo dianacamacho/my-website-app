@@ -1,103 +1,129 @@
-<% provide(:title, @page_title_details) %>
+<div id="content">
+  <div class="e-block e-block-skin">
+    <div class="container">
+      <h2 class="font-accident-one-bold uppercase">
+        <%= @project.name %>
+      </h2>
+      <div class="dividewhite2"></div>
 
-<div class="content-wrap" id="project-show">
-  <div id="blogpost" class="inner-content">
-    <section id="page-title" class="inner-section project-title-info">
-      <div class="container-fluid nopadding wow fadeInRight" data-wow-delay="0.4s" data-wow-offset="10">
-        <h2 class="font-accident-two-normal uppercase"><%= @project.name %></h2><br>
-        <% if user_signed_in? %>
-          <div>
-            <%= link_to "Edit", edit_project_path(@project), class: "btn btn-lg btn-darker" %>
-            <%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: "Are you sure you want to delete this project?" }, class: "btn btn-lg btn-darker" %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-8">
+              <img src="/assets/custom/images/magazine/01.jpg" class="img-responsive" alt="img11"/>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                  <div class="portfolio-item-data">
+                    <!-- <h5 class="font-accident-one-medium uppercase">Project Data</h5>
+                    <div class="infoblock">
+                      <hr>
+                      <ul>
+                        <li>Project Category: <span>Web Design</span></li>
+                        <li>Client: <span>Ergotron LLC</span></li>
+                        <li>Start Date: <span>11.14.2014</span></li>
+                        <li>End Date: <span>12.02.2014</span></li>
+                      </ul>
+                    </div> -->
+                    <h5 class="font-accident-one-medium uppercase">Technologies</h5>
+                    <div class="infoblock">
+                      <hr>
+                      <ul class="list-o">
+                        <% @project.technologies.each do |tech| %>
+                          <li><%= tech.name %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        <% end %><br>
-        <div class="post-tag pull-left">
-          <span>Technologies:</span>
-          <% @project.technologies.each do |tech| %>
-            <span><a><%= tech.name %></a></span>
-          <% end %>
         </div>
       </div>
 
-      <div class="project-links">
-        <ul class="list-inline social">
-          <% unless @project.preview == "" || @project.preview == nil %>
-            <a target="_blank" href="<%= @project.preview %>" data-toggle="tooltip" data-placement="bottom" title="More Info">
-              <div class="link-wrapper text-center">
-                <li><i class="fa fa-eye link-icon"></i></li>
-              </div>
-            </a>
-          <% end %>
-          <% unless @project.github == "" || @project.github == nil %>
-            <a target="_blank" href="<%= @project.github %>" data-toggle="tooltip" data-placement="bottom" title="Code on GitHub">
-              <div class="link-wrapper text-center">
-                <li><i class="fa fa-github-square link-icon"></i></li>
-              </div>
-            </a>
-          <% end %>
-          <% unless @project.website == "" || @project.website == nil %>
-            <a target="_blank" href="<%= @project.website %>" data-toggle="tooltip" data-placement="bottom" title="App Website">
-              <div class="link-wrapper text-center">
-                <li><i class="fa fa-laptop link-icon"></i></li>
-              </div>
-            </a>
-          <% end %>
-          <% unless @project.screencast == "" || @project.screencast == nil %>
-            <a target="_blank" href="<%= @project.screencast %>" data-toggle="tooltip" data-placement="bottom" title="App Screencast">
-              <div class="link-wrapper text-center">
-                <li><i class="fa fa-video-camera link-icon"></i></li>
-              </div>
-            </a>
-          <% end %>
-         </ul>
-       </div>
-    </section>
+      <div class="dividewhite2"></div>
 
-    <section class="inner-section project-post">
-      <div class="container-fluid nopadding">
-        <article class="post wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
-          <hr>
-          <span class="screencap-heading">Description</span>
-          <p class="project-description"><%= @project.description.html_safe %></p>
-          <div class="dividewhite4"></div>
-          <hr>
-          <span class="screencap-heading">Screencaps</span>
-          <div class="dividewhite4"></div>
-          
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <% (@project.images.size - 1).times do %>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <% end %>  
-            </ol>
-
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <%= image_tag "portfolio_pics/#{@project.image_1}", class: "img-responsive wow fadeInDown" %>
-              </div>
-              <% @project.images.each_with_index do |image, index| %>
-                <% if index > 0 %>
-                  <div class="item">
-                    <%= image_tag "portfolio_pics/#{image}", class: "img-responsive wow fadeInDown indiv-images" %>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-          <hr>
-        </article>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="font-accident-one-medium uppercase">Overview</h3>
+          <p>
+            The organization was founded by Mrs. Ethel Brogan, a native of Armagh,
+            Northern Ireland who learned Irish by spending one month each summer in the Gaeltacht.
+            She emigrated to New York City in 1946 and eventually moved to upstate New York.
+            In the United States, Brogan began teaching Irish classes for the benefit of interested neighbors.
+            In 1981, she arranged the first "Gaeltacht Weekend" in New York for students to improve their
+            Irish language skills through total immersion.
+          </p>
+        </div>
       </div>
-      <div class="dividewhite8"></div>
-    </section>
+    </div>
+  </div>
+
+  <div class="e-block e-bg-light-texture" data-stellar-background-ratio="0.5">
+
+    <div class="container isotope-container">
+
+      <h3 class="font-accident-one-bold uppercase">Related Products</h3>
+      <p>
+        The contribution winning the FACE award is selected by a jury from the entries in the <br>"Human Rights in Cinema" section of the festival. This includes both documentaries and feature <br>films investigating social change and individual dramas.
+      </p>
+      <div class="dividewhite3"></div>
+
+      <div id="posts" class="row">
+
+        <div id="1" class="item web col-md-3 nopadding">
+          <div class="item-wrap">
+            <figure class="effect-goliath">
+              <img src="/assets/custom/images/magazine/01.jpg" alt="img11"/>
+              <figcaption>
+                <h3>Music <span>Sounds</span></h3>
+                <p>Mitrastigma was a monotypic genus of flowering plants in the </p>
+                <a href="portfolio-item.html">View more</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div id="2" class="item web col-md-3 nopadding">
+          <div class="item-wrap">
+            <figure class="effect-goliath">
+              <img src="/assets/custom/images/magazine/02.jpg" alt="img03"/>
+              <figcaption>
+                <h3>Fire <span>Burns</span></h3>
+                <p>Red Rosa may refer to: Inga bella is a species of legume</p>
+                <a href="portfolio-item.html">View more</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div id="3" class="item marketing col-md-3 nopadding">
+          <div class="item-wrap">
+            <figure class="effect-goliath">
+              <img src="/assets/custom/images/magazine/03.jpg" alt="img11"/>
+              <figcaption>
+                <h3>Ice <span>Cold</span></h3>
+                <p>Ciani's career begun when he won second prize at the Liszt-Bartók</p>
+                <a href="portfolio-item.html">View more</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div id="4" class="item marketing col-md-3 nopadding">
+          <div class="item-wrap">
+            <figure class="effect-goliath">
+              <img src="/assets/custom/images/magazine/04.jpg" alt="img03"/>
+              <figcaption>
+                <h3>Everybody <span>Lies</span></h3>
+                <p>His repertoire was broad and diverse for a pianist of his age</p>
+                <a href="portfolio-item.html">View more</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require lightbox
+//= require chosen.jquery.min
+//= require chosen.proto.min
 //= require_tree .

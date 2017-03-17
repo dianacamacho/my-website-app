@@ -3,14 +3,12 @@
 <div id="content">
   <div id="blog" class="e-block e-block-skin">
     <div class="container">
-      <!-- Decorative arrow -->
       <div class="down-arrow">&nbsp;</div>
-      <!-- /Decorative arrow -->
-
       <div class="dividewhite6"></div>
+
         <% if @blog_posts.any? %>
-          <% @blog_posts.each do |post| %>
-            <article class="post">
+          <article class="post">
+            <% @blog_posts.each do |post| %>
               <h3 class="post-title"><%= link_to post.title, blog_post_path(post) %></h3>
               
               <div class="post-attrib">
@@ -30,14 +28,12 @@
               <div class="blog-text">
                 <p><%= sanitize(post.shortened_text) %></p>
               </div>
-            </article>
-            <hr>
-          <% end %>
-        <% else %>
-          <article class="post">
+              <hr>
+            <% end %>
+          <% else %>
             <h3 class="post-title text-center">Under Construction! Check back later.</h3>
-          </article>
-        <% end %>
+          <% end %>
+        </article>
       </div>
     </div>
   </div>

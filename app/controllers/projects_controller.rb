@@ -62,10 +62,7 @@ class ProjectsController < ApplicationController
         :website,
         :screencast,
         :preview,
-        :image_1,
-        :image_2,
-        :image_3,
-        :image_4,
+        { images: [] },
         technology_ids: []
       )
     end

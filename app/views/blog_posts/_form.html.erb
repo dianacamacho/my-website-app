@@ -1,19 +1,46 @@
-<%= form_for(blog_post, html: { :class => "wpcf7-form" }) do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <div class="field">
-    <%= f.text_field :title, autofocus: true, placeholder: "Title" %>
+<% provide(:title, @page_title_details) %>
+
+<div id="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="e-block e-block-light e-bg-light-texture" data-stellar-background-ratio="0.5">
+        <div class="row">
+          <div class="width-60 e-block-centered">
+            <h3 class="uppercase">Post Details</h3>
+            <div class="dividewhite2"></div>
+            <div class="contacts-form">
+              <div>
+                <%= form_for(blog_post, html: { :class => "wpcf7-form" }) do |f| %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <div class="field">
+                    <%= f.text_field :title, autofocus: true, placeholder: "Title" %>
+                  </div>
+                  <div class="field">
+                    <%= f.text_area :text, autofocus: true, size: "20x10", placeholder: "Start writing your post!" %>
+                  </div>
+                  <div class="field">
+                    <%= f.datetime_field :show_date, placeholder: "Show Date / Time", "data-alt-input" => "true", "data-alt-format" => "M d, Y h:i K", class: "flatpickr" %>
+                  </div>
+                   <div class="field">
+                    <%= f.file_field :images, multiple: true %>
+                  </div>
+                  <div class="field text-center">
+                    <%= button_tag button_text, class: "btn btn-lg btn-darker" %>
+                    <%= link_to "Cancel", blog_posts_path, class: "btn btn-lg btn-darker" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.text_area :text, autofocus: true, size: "20x10", placeholder: "Start writing your post!" %>
-  </div>
-  <div class="field">
-    <%= f.datetime_field :show_date, placeholder: "Show Date / Time", "data-alt-input" => "true", "data-alt-format" => "M d, Y h:i K", class: "flatpickr" %>
-  </div>
-   <div class="field">
-    <%= f.file_field :images, multiple: true %>
-  </div>
-  <div class="field text-center">
-    <%= button_tag button_text, class: "btn btn-lg btn-darker" %>
-    <%= link_to "Cancel", blog_posts_path, class: "btn btn-lg btn-darker" %>
-  </div>
-<% end %>
+</div>
+
+<script>
+  flatpickr(".flatpickr", {
+    enableTime: true
+  });
+</script>
+
