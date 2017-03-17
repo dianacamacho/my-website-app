@@ -27,7 +27,7 @@
           <% end %>
 
           <div class="blog-text">
-            <p><%= @blog_post.text %></p>
+            <p><%= sanitize(@blog_post.text) %></p>
           </div>
 
           <% if current_user %>

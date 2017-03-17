@@ -3,7 +3,7 @@ class BlogPostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @blog_posts = BlogPost.published.order(created_at: :desc)
+    @blog_posts = BlogPost.published.order(show_date: :desc)
     @page_title_details = "Blog"
   end
 
