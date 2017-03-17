@@ -101,16 +101,14 @@
           <%= message %>
         </div>
       <% end %>
-
-      <% if @page_title_details.present? %>
-         <div class="container">
-           <div id="page-title">
-              <div class="page-title-details">
-                 <h1 class="font-accident-one-bold fontcolor-invert"><%= @page_title_details %></h1>
-              </div>
+      
+      <div class="container">
+        <div id="page-title">
+           <div class="page-title-details">
+              <h1 class="font-accident-one-bold fontcolor-invert page-title-content-text"><%= @page_title_details %></h1>
            </div>
-         </div>
-      <% end %>
+        </div>
+      </div>
     </header>
     <!-- /main-top -->
 

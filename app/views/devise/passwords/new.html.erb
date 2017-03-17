@@ -1,40 +1,48 @@
-<div class="content-wrap" id="login">
-  <div id="feedback" class="inner-content">
-    <section id="page-title" class="inner-section">
-      <div class="container-fluid nopadding wow fadeInRight" data-wow-delay="0.4s" data-wow-offset="10">
-        <h2 class="font-accident-two-normal uppercase">Forgot Password?</h2>
-        <h5 class="font-accident-one-bold uppercase subtitle">Enter email</h5>
-      </div>
-    </section>
-    <!-- Feedback Block -->
-    <section class="inner-section feedback feedback-light">
-      <div class="container-fluid nopadding">
+<% provide(:title, @page_title_detils) %>
+
+<div id="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="e-block e-block-light e-bg-light-texture" data-stellar-background-ratio="0.5">
         <div class="row">
-          <div class="col-md-2">&nbsp;</div>
-          <div class="col-md-8 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
+          <div class="width-60 e-block-centered">
+            <h3 class="uppercase">Forgot Password?</h3>
             <div class="dividewhite2"></div>
-            <div id="form-messages"></div>
-            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, :class => "wpcf7-form"}) do |f| %>
-              <%= devise_error_messages! %>
-              <div class="field">
-                <!--<label for="name">Name:</label>-->
-                <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+            <div class="contacts-form">
+              <div>
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, :class => "wpcf7-form"}) do |f| %>
+                  <%= devise_error_messages! %>
+                  <div class="field">
+                    <!--<label for="name">Name:</label>-->
+                    <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+                  </div>
+                  <div class="dividewhite2"></div>
+                  <div class="field text-center">
+                    <%= button_tag "Send me reset password instructions", class: "btn btn-lg btn-darker" %>
+                  </div>
+                <% end %>
+                <div class="devise-links">
+                  <%= render "devise/shared/links" %>
+                </div>
               </div>
-              <div class="dividewhite2"></div>
-              <div class="field text-center">
-                <%= button_tag "Send me reset password instructions", class: "btn btn-lg btn-darker" %>
-              </div>
-            <% end %>
-            <div class="devise-links">
-              <%= render "devise/shared/links" %>
             </div>
           </div>
-          <div class="col-md-2">&nbsp;</div>
-          <div class="col-md-12 divider-dynamic"></div>
         </div>
       </div>
-      <div class="dividewhite6"></div>
-    </section>
-    <!-- /Feedback Block -->
+    </div>
   </div>
 </div>
+
+<script>
+  $(function(){
+    $('html, body').animate({
+        scrollTop: $('#content').offset().top
+    }, 2000);
+    return false;
+  });
+
+  $(document).ready(function() {
+    $(".page-title-content-text").html("Passwords");
+  })
+</script>
+
