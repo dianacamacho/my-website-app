@@ -26,18 +26,19 @@
                           <li>Client: <span><%= @project.client %></span></li>
                         <% end %>
                         <div class="row">
-                        <% if @project.website.present? %>
-                          <li class="col-xs-4"><span><%= link_to "Website", @project.website, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
-                        <% end %>
-                        <% if @project.github.present? %>
-                          <li class="col-xs-4"><span><%= link_to "GitHub", @project.github, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
-                        <% end %>
-                        <% if @project.screencast.present? %>
-                          <li class="col-xs-4"><span><%= link_to "Screencast", @project.screencast, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
-                        <% end %>
-                        <% if @project.preview.present? %>
-                          <li class="col-xs-4"><span><%= link_to "Preview", @project.preview, class: "btn btn-xs btn-rd btn-block", target: "_blank" %></span></li>
-                        <% end %>
+                          <div class="dividewhite2"></div>
+                          <% if @project.website.present? %>
+                            <li class="col-xs-4"><span><%= link_to "Website", @project.website, class: "btn btn-xs btn-gr btn-block", target: "_blank" %></span></li>
+                          <% end %>
+                          <% if @project.github.present? %>
+                            <li class="col-xs-4"><span><%= link_to "GitHub", @project.github, class: "btn btn-xs btn-gr btn-block", target: "_blank" %></span></li>
+                          <% end %>
+                          <% if @project.screencast.present? %>
+                            <li class="col-xs-4"><span><%= link_to "Screencast", @project.screencast, class: "btn btn-xs btn-gr btn-block", target: "_blank" %></span></li>
+                          <% end %>
+                          <% if @project.preview.present? %>
+                            <li class="col-xs-4"><span><%= link_to "Preview", @project.preview, class: "btn btn-xs btn-gr btn-block", target: "_blank" %></span></li>
+                          <% end %>
                         </div>
                       </ul>
                     </div>

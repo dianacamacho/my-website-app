@@ -22,13 +22,6 @@
 
 /********** End Background Images **********/ 
 
-// .flexslider {
-//   .slides {
-//     height: 300px !important;
-//     width: auto !important;
-//   }
-// }
-
 .slider-img {
   height: 100%;
   width: 100%;
@@ -95,7 +88,20 @@
   }
 }
 
+.btn-gr {
+  font: 12px/1.7 "Oxygen", sans-serif !important;
+  width: auto;
+}
+
+.btn-gr:hover {
+  color: #333 !important;
+}
+
+/********** Projects **********/
+
 .project-show-img {
   height: 200px;
   width: auto;
 }
+
+/********** End Projects **********/
