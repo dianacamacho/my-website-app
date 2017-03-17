@@ -15,6 +15,7 @@
    <%= csrf_meta_tags %>
    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <%= favicon_link_tag 'favicon.ico' %>
 
     <!-- CSS -->
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css"                     rel="stylesheet" type="text/css" media="screen" />
@@ -48,15 +49,13 @@
     <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
     <script src="https://unpkg.com/flatpickr"></script>
 
-
    <!-- Fonts -->
    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
   </head>
   
   <body>
-
     <!-- sub-top -->
-   <div id="sub-top-light">
+    <div id="sub-top-light">
       <div class="container">
         <div class="top-contacts">
             <div><a href="https://twitter.com/deecodes" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></div>
@@ -65,7 +64,7 @@
             <div><a href="<%= ENV['aws_resume_link'] %>" target="_blank" title="Resume"><i class="fa fa-briefcase"></i></a></div>
         </div>
       </div>
-   </div>
+    </div>
     <!-- /sub-top -->
 
     <!-- main-top -->
@@ -77,9 +76,9 @@
 
           <nav id="main-menu" class="site-navigation primary-navigation" role="navigation">
             <ul class="sf-menu clearfix" id="example">
-               <li><%= link_to "Blog", blog_path %></li>
                <li><%= link_to "About", about_path %></li>
-               <li><%= link_to "Work", projects_path %></li>
+               <li><%= link_to "Portfolio", projects_path %></li>
+               <li><%= link_to "Blog", blog_path %></li>
                <% if user_signed_in? %>
                  <li><a href="#">Account</a>
                    <div class="mobnav-subarrow"></div>
@@ -112,7 +111,7 @@
     </header>
     <!-- /main-top -->
 
-   <%= yield %>
+    <%= yield %>
 
     <!-- Back to Top -->
     <div id="back-top"><a href="#top"></a></div>
