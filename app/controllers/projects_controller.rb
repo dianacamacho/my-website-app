@@ -64,6 +64,7 @@ class ProjectsController < ApplicationController
         :screencast,
         :preview,
         :project_type,
+        :client,
         { images: [] },
         technology_ids: []
       )

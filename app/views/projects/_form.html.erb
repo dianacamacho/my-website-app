@@ -12,12 +12,15 @@
               <div>
                 <%= form_for(@project, html: {:class => "wpcf7-form" }) do |f| %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
+                  <div class="field">
+                    <%= f.text_field :name, autofocus: true, placeholder: "Project Name" %>
+                  </div>
                   <div class="row">
                     <div class="field col-md-6">
-                      <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
+                      <%= f.text_field :project_type, autofocus: true, placeholder: "Type (Web App, etc)" %>
                     </div>
                     <div class="field col-md-6">
-                      <%= f.text_field :project_type, autofocus: true, placeholder: "Type" %>
+                      <%= f.text_field :client, autofocus: true, placeholder: "Client Name" %>
                     </div>
                   </div>
                   <div class="field">

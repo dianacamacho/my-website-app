@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170317014336) do
     t.datetime "updated_at",   null: false
     t.json     "images"
     t.string   "project_type"
+    t.string   "client"
   end
 
   create_table "projects_technologies", id: false, force: :cascade do |t|
