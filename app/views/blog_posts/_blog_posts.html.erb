@@ -2,6 +2,18 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="post-title panel-title"><%= link_to post.title, blog_post_path(post) %></h3>
+      <% if current_user %>
+          <%= link_to "Edit", edit_blog_post_path(post), class: "btn btn-xs btn-gr", style: "display: inline-block" %>
+          <div style="display: inline-block;">
+          <% if post.draft %>
+            <%= form_for(post) do |f| %>
+              <%= f.hidden_field :draft, value: false %>
+              <%= button_tag "Publish", class: "btn btn-xs btn-gr", style: "display: inline-block" %>
+            <% end %>
+          <% end %>
+        </div>
+        <%= link_to "Delete", blog_post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-xs btn-gr" %>
+      <% end %>
     </div>
     <div class="panel-body">
       <div class="post-attrib">
