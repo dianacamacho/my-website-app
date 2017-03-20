@@ -1,5 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
+  before_action :check_visibilty, only: [:show]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -53,12 +54,25 @@ class BlogPostsController < ApplicationController
     redirect_to blog_posts_path
   end
 
+  def unpublished_posts
+    @draft_posts = BlogPost.drafts.order(show_date: :desc)
+    @upcoming_posts = BlogPost.upcoming.order(show_date: :desc)
+    @page_title_details = "Unpublished Posts"
+  end
+
   private
     def set_blog_post
       @blog_post = BlogPost.find(params[:id])
     end
 
     def blog_post_params
-      params.require(:blog_post).permit(:user_id, :title, :text, :show_date, { images: [] })
+      params.require(:blog_post).permit(:user_id, :title, :text, :show_date, :draft, { images: [] })
+    end
+
+    def check_visibilty
+      unless current_user || @blog_post.viewable?
+        flash[:warning] = "That post is not currently available!"
+        redirect_to blog_posts_path
+      end
     end
 end

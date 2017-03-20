@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
   get '/about' => 'email_messages#new', as: :about
   get '/blog' => 'blog_posts#index', as: :blog
+  get '/unpublished_posts' => 'blog_posts#unpublished_posts', as: :unpublished_posts
   resources :blog_posts
   resources :projects
   resources :email_messages, only: [:create]

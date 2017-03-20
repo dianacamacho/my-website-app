@@ -1,0 +1,32 @@
+<% provide(:title, @page_title_details) %>
+
+<div id="content">
+  <div id="blog" class="e-block e-block-skin">
+    <div class="container">
+      <div class="down-arrow">&nbsp;</div>
+      <div class="dividewhite6"></div>
+
+      <article class="post">
+        <h3 class="uppercase">Drafted Posts</h3>
+        <div class="dividewhite6"></div>
+        <% if @draft_posts.any? %>
+            <%= render "blog_posts", blog_posts: @draft_posts %>
+        <% else %>
+          <h3 class="post-title text-center">No blog drafts</h3>
+        <% end %>
+      </article>
+
+      <article class="post">
+        <h3 class="uppercase">Upcoming Posts</h3>
+        <div class="dividewhite6"></div>
+        <% if @upcoming_posts.any? %>
+            <%= render "blog_posts", blog_posts: @upcoming_posts %>
+        <% else %>
+          <h3 class="post-title text-center">No upcoming posts</h3>
+        <% end %>
+      </article>
+    </div>
+  </div>
+</div>
+
+

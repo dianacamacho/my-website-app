@@ -24,6 +24,11 @@
                    <div class="field">
                     <%= f.file_field :images, multiple: true %>
                   </div>
+                  <div class="field">
+                    <%= f.check_box :draft %>
+                    <%= f.label :draft, "This post is a draft", class: "pull-left" %>
+                  </div>
+                  <div class="dividewhite2"></div>
                   <div class="field text-center">
                     <%= button_tag button_text, class: "btn btn-lg btn-darker" %>
                     <%= link_to "Cancel", blog_posts_path, class: "btn btn-lg btn-darker" %>
