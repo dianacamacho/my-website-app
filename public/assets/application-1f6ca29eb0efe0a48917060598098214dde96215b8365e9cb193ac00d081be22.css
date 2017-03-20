@@ -1,0 +1,1119 @@
+/* Preload images */
+/* line 2, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+body:after {
+  content: url(/assets/close-5d62e6c90005bfb71f6abb440f9e4753681cb23bbd5e60477ab6f442d2f0e69c.png) url(/assets/loading-225aa88b6ab02c06222ec9468d62e15fa188e39cdb9431d1f55401ad380753ed.gif) url(/assets/prev-7fd9273f20fdb1229c224341271a119020a5eee74ccf6b4605730917c864caf2.png) url(/assets/next-15b869b02c6fbaa8c6c26445a2dd2d9bad80fd27b1409f8179e5dd89dc89d90a.png);
+  display: none;
+}
+
+/* line 7, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+body.lb-disable-scrolling {
+  overflow: hidden;
+}
+
+/* line 11, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+/* line 22, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+
+/* line 32, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+  max-height: none;
+  border-radius: 3px;
+  /* Image border */
+  border: 4px solid white;
+}
+
+/* line 43, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lightbox a img {
+  border: none;
+}
+
+/* line 47, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-outerContainer {
+  position: relative;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 4px;
+  /* Background color behind image.
+     This is visible during transitions. */
+  background-color: white;
+}
+
+/* line 60, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 66, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 76, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(/assets/loading-225aa88b6ab02c06222ec9468d62e15fa188e39cdb9431d1f55401ad380753ed.gif) no-repeat;
+}
+
+/* line 84, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 93, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 97, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a {
+  outline: none;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+}
+
+/* line 102, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-prev, .lb-next {
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+/* line 108, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-prev {
+  width: 34%;
+  left: 0;
+  float: left;
+  background: url(/assets/prev-7fd9273f20fdb1229c224341271a119020a5eee74ccf6b4605730917c864caf2.png) left 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+/* line 121, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-prev:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 126, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-next {
+  width: 64%;
+  right: 0;
+  float: right;
+  background: url(/assets/next-15b869b02c6fbaa8c6c26445a2dd2d9bad80fd27b1409f8179e5dd89dc89d90a.png) right 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+/* line 139, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-nav a.lb-next:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 144, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 157, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 163, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data {
+  padding: 0 4px;
+  color: #ccc;
+}
+
+/* line 168, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+/* line 175, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+/* line 181, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-caption a {
+  color: #4ae;
+}
+
+/* line 185, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+
+/* line 193, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(/assets/close-5d62e6c90005bfb71f6abb440f9e4753681cb23bbd5e60477ab6f442d2f0e69c.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* line 209, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/lightbox.css */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/*!
+Chosen, a Select Box Enhancer for jQuery and Prototype
+by Patrick Filler for Harvest, http://getharvest.com
+
+Version 1.6.2
+Full source at https://github.com/harvesthq/chosen
+Copyright (c) 2011-2016 Harvest http://getharvest.com
+
+MIT License, https://github.com/harvesthq/chosen/blob/master/LICENSE.md
+This file is generated by `grunt build`, do not edit it by hand.
+*/
+/* @group Base */
+/* line 14, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 23, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 28, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-top: 0;
+  background: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* line 39, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+}
+
+/* line 42, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container a {
+  cursor: pointer;
+}
+
+/* line 45, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .search-choice .group-name, .chosen-container .chosen-single .group-name {
+  margin-right: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  color: #999999;
+}
+
+/* line 53, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .search-choice .group-name:after, .chosen-container .chosen-single .group-name:after {
+  content: ":";
+  padding-left: 2px;
+  vertical-align: top;
+}
+
+/* @end */
+/* @group Single Chosen */
+/* line 61, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 8px;
+  height: 25px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #fff;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+  background: -webkit-linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -moz-linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -o-linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+}
+
+/* line 82, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-default {
+  color: #999;
+}
+
+/* line 85, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-right: 26px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 92, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-single-with-deselect span {
+  margin-right: 38px;
+}
+
+/* line 95, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-single abbr {
+  position: absolute;
+  top: 6px;
+  right: 26px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url(/assets/chosen-sprite-8aa69ee6b2376505578d758bfbbc52aec88fa5e591f1a7cabd8adfa80a7b613a.png) -42px 1px no-repeat;
+  font-size: 1px;
+}
+
+/* line 105, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+
+/* line 108, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+
+/* line 111, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 100%;
+}
+
+/* line 119, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-single div b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(/assets/chosen-sprite-8aa69ee6b2376505578d758bfbbc52aec88fa5e591f1a7cabd8adfa80a7b613a.png) no-repeat 0px 2px;
+}
+
+/* line 125, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-search {
+  position: relative;
+  z-index: 1010;
+  margin: 0;
+  padding: 3px 4px;
+  white-space: nowrap;
+}
+
+/* line 132, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-search input[type="text"] {
+  margin: 1px 0;
+  padding: 4px 20px 4px 5px;
+  width: 100%;
+  height: auto;
+  outline: 0;
+  border: 1px solid #aaa;
+  background: white url(/assets/chosen-sprite-8aa69ee6b2376505578d758bfbbc52aec88fa5e591f1a7cabd8adfa80a7b613a.png) no-repeat 100% -20px;
+  background: url(/assets/chosen-sprite-8aa69ee6b2376505578d758bfbbc52aec88fa5e591f1a7cabd8adfa80a7b613a.png) no-repeat 100% -20px;
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0;
+}
+
+/* line 146, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single .chosen-drop {
+  margin-top: -1px;
+  border-radius: 0 0 4px 4px;
+  background-clip: padding-box;
+}
+
+/* line 151, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px;
+}
+
+/* @end */
+/* @group Results */
+/* line 158, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results {
+  color: #444;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 168, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 5px 6px;
+  list-style: none;
+  line-height: 15px;
+  word-wrap: break-word;
+  -webkit-touch-callout: none;
+}
+
+/* line 177, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer;
+}
+
+/* line 181, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li.disabled-result {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+
+/* line 186, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li.highlighted {
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+}
+
+/* line 195, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li.no-results {
+  color: #777;
+  display: list-item;
+  background: #f4f4f4;
+}
+
+/* line 200, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li.group-result {
+  display: list-item;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* line 205, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li.group-option {
+  padding-left: 15px;
+}
+
+/* line 208, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container .chosen-results li em {
+  font-style: normal;
+  text-decoration: underline;
+}
+
+/* @end */
+/* @group Multi Chosen */
+/* line 215, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 5px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+  background-image: -webkit-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);
+  cursor: text;
+}
+
+/* line 231, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li {
+  float: left;
+  list-style: none;
+}
+
+/* line 235, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-field {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* line 240, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  margin: 1px 0;
+  padding: 0;
+  height: 25px;
+  outline: 0;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none;
+  color: #999;
+  font-size: 100%;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0;
+}
+
+/* line 254, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-choice {
+  position: relative;
+  margin: 3px 5px 3px 0;
+  padding: 3px 20px 3px 5px;
+  border: 1px solid #aaa;
+  max-width: 100%;
+  border-radius: 3px;
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-size: 100% 19px;
+  background-repeat: repeat-x;
+  background-clip: padding-box;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 13px;
+  cursor: default;
+}
+
+/* line 275, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-choice span {
+  word-wrap: break-word;
+}
+
+/* line 278, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url(/assets/chosen-sprite-8aa69ee6b2376505578d758bfbbc52aec88fa5e591f1a7cabd8adfa80a7b613a.png) -42px 1px no-repeat;
+  font-size: 1px;
+}
+
+/* line 288, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+  background-position: -42px -10px;
+}
+
+/* line 291, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+  padding-right: 5px;
+  border: 1px solid #ccc;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  color: #666;
+}
+
+/* line 302, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+  background: #d4d4d4;
+}
+
+/* line 305, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
+  background-position: -42px -10px;
+}
+
+/* line 308, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-results {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 312, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-multi .chosen-drop .result-selected {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+
+/* @end */
+/* @group Active  */
+/* line 320, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-active .chosen-single {
+  border: 1px solid #5897fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 324, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-active.chosen-with-drop .chosen-single {
+  border: 1px solid #aaa;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+  background-image: -webkit-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: -moz-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: -o-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
+  box-shadow: 0 1px 0 #fff inset;
+}
+
+/* line 337, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-left: none;
+  background: transparent;
+}
+
+/* line 341, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+  background-position: -18px 2px;
+}
+
+/* line 344, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-active .chosen-choices {
+  border: 1px solid #5897fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 348, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
+  color: #222 !important;
+}
+
+/* @end */
+/* @group Disabled Support */
+/* line 354, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-disabled {
+  opacity: 0.5 !important;
+  cursor: default;
+}
+
+/* line 358, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-disabled .chosen-single {
+  cursor: default;
+}
+
+/* line 361, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+  cursor: default;
+}
+
+/* @end */
+/* @group Right to Left */
+/* line 367, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl {
+  text-align: right;
+}
+
+/* line 370, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-single {
+  overflow: visible;
+  padding: 0 8px 0 0;
+}
+
+/* line 374, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-single span {
+  margin-right: 0;
+  margin-left: 26px;
+  direction: rtl;
+}
+
+/* line 379, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-single-with-deselect span {
+  margin-left: 38px;
+}
+
+/* line 382, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-single div {
+  right: auto;
+  left: 3px;
+}
+
+/* line 386, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-single abbr {
+  right: auto;
+  left: 26px;
+}
+
+/* line 390, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-choices li {
+  float: right;
+}
+
+/* line 393, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-choices li.search-field input[type="text"] {
+  direction: rtl;
+}
+
+/* line 396, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-choices li.search-choice {
+  margin: 3px 5px 3px 0;
+  padding: 3px 5px 3px 19px;
+}
+
+/* line 400, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
+  right: auto;
+  left: 4px;
+}
+
+/* line 404, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl.chosen-container-single-nosearch .chosen-search,
+.chosen-rtl .chosen-drop {
+  left: 9999px;
+}
+
+/* line 408, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl.chosen-container-single .chosen-results {
+  margin: 0 0 4px 4px;
+  padding: 0 4px 0 0;
+}
+
+/* line 412, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-results li.group-option {
+  padding-right: 15px;
+  padding-left: 0;
+}
+
+/* line 416, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-right: none;
+}
+
+/* line 419, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl .chosen-search input[type="text"] {
+  padding: 4px 5px 4px 20px;
+  background: white url(/assets/chosen-sprite-8aa69ee6b2376505578d758bfbbc52aec88fa5e591f1a7cabd8adfa80a7b613a.png) no-repeat -30px -20px;
+  background: url(/assets/chosen-sprite-8aa69ee6b2376505578d758bfbbc52aec88fa5e591f1a7cabd8adfa80a7b613a.png) no-repeat -30px -20px;
+  direction: rtl;
+}
+
+/* line 425, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl.chosen-container-single .chosen-single div b {
+  background-position: 6px 2px;
+}
+
+/* line 428, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
+  background-position: -12px 2px;
+}
+
+/* @end */
+/* @group Retina compatibility */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+  /* line 435, /Users/dcam1901/Desktop/programming/my-website-app/vendor/assets/stylesheets/chosen.scss */
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: url(/assets/chosen-sprite@2x-1e349b80fba8c23b63656925fda8dfe3c5927b5d0d8a1672143416caacf460fb.png) !important;
+    background-size: 52px 37px !important;
+    background-repeat: no-repeat !important;
+  }
+}
+/* @end */
+/* line 6, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/blog_posts.scss */
+#blog-show .blog-title-info {
+  padding: 50px 50px 10px 50px;
+}
+/* line 10, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/blog_posts.scss */
+#blog-show .blog-post {
+  padding-top: 5px;
+}
+/********** Formatting **********/
+/* line 4, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+/* line 8, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.ptb-20 {
+  padding: 20px 0 !important;
+}
+
+/* line 12, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+/********** End Formatting **********/
+/********** Background Images **********/
+/* line 20, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.e-bg-section05::before {
+  background: url(/assets/section_pics/roman_forum-23fd270061fed3ac2341c5b3578784dc83ecf39f349990ef369c302bee744469.JPG) no-repeat center center;
+}
+
+/********** End Background Images **********/
+/* line 26, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.slider-img {
+  height: 100%;
+  width: 100%;
+}
+
+/********** Icons **********/
+/* line 34, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.contact-icon {
+  display: inline-block;
+  margin: 10px;
+}
+
+/* line 39, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.single-icon {
+  color: #333;
+  font-size: 20px !important;
+}
+
+/********** End Icons **********/
+/********** Blog **********/
+/* line 49, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.slider-images {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* line 54, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blog-index-img {
+  height: 300px;
+  width: auto;
+}
+
+/* line 59, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blog-show-img {
+  height: 400px;
+  width: auto;
+}
+
+/* line 64, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blog-text {
+  margin: 20px 0;
+}
+
+/* line 68, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.blue-text {
+  color: #0076a3 !important;
+}
+
+/********** End Blog **********/
+/* line 74, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.chosen-container input[type="text"] {
+  width: 100% !important;
+  border-radius: 0 !important;
+  font: 12px/1.6 "Oxygen", sans-serif, Helvetica, Arial, sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  margin-bottom: 15px !important;
+}
+
+/* line 84, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.chosen-choices {
+  border: 1px solid #666 !important;
+  background: #fff !important;
+}
+
+/* line 91, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.e-block-centered .tech-select {
+  text-align: left !important;
+}
+
+/* line 96, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.btn-gr {
+  font: 12px/1.7 "Oxygen", sans-serif !important;
+  width: auto;
+}
+
+/********** Projects **********/
+/* line 103, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/dc_styling.scss */
+.project-show-img {
+  height: 200px;
+  width: auto;
+}
+
+/********** End Projects **********/
+/* line 1, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.inner-section.feedback.feedback-light {
+  padding-top: 0px;
+}
+
+/* line 5, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.devise-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* line 10, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#homesection .m-details i.followme::before {
+  margin: 0px;
+  padding: 5px 7px 5px 8px;
+  border: solid 2px #2f2f2f;
+  border-radius: 20%;
+}
+
+/* line 17, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#top-navigation .ident .vc-photo {
+  min-height: 360px;
+  background: url(/assets/user_photo_1-e128df922181ccea3a68fbb59250588d1c0dba7ca5ab714243f62c786e81cbad.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url("/assets/custom/images/grayscale.svg");
+  /* Firefox 4+ */
+  filter: gray;
+  /* IE 6-9 */
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+/* line 37, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#top-navigation .ident .vc-photo a {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 42, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+#top-navigation .ident:hover .vc-photo {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: none;
+}
+
+/* line 50, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg01 {
+  background: url(/assets/custom/images/timeline-1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 56, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg01-01 {
+  background: url(/images/resume_pics/acltc_class.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 62, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg02 {
+  background: url(/assets/custom/images/timeline-2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 68, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg02-01 {
+  background: url(/images/resume_pics/acltc_code-min.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 74, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg03 {
+  background: url(/assets/custom/images/timeline-3.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 80, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg03-01 {
+  background: url(/images/resume_pics/computer.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 86, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg04 {
+  background: url(/assets/custom/images/timeline-4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 92, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.timeline-bg04-01 {
+  background: url(/assets/custom/images/timeline-4-01.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 98, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+div.col-md-8.circle-skills.nopadding.ui-block-color03 {
+  min-height: 510px;
+}
+
+/* line 102, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.carousel-inner > .item > img {
+  margin: auto;
+}
+
+/* line 106, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/my_styling.scss */
+.white-font {
+  color: #fff;
+}
+/* line 6, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-title-info {
+  padding: 50px 50px 10px 50px;
+}
+/* line 10, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-post {
+  padding-top: 5px;
+}
+/* line 13, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-post .screencap-heading {
+  color: #e74c3c;
+  text-transform: uppercase;
+}
+/* line 18, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-post .project-description {
+  margin-top: 10px;
+}
+/* line 23, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .post-tag {
+  color: #e74c3c;
+}
+/* line 28, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .carousel-inner .indiv-images {
+  max-height: 600px;
+}
+/* line 33, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .project-links {
+  margin: auto;
+}
+/* line 37, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .link-wrapper {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  border: solid 2px #2f2f2f;
+  border-radius: 20%;
+  margin: 0px 5px;
+}
+/* line 46, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show i.link-icon {
+  font-size: 30px;
+  padding: 7px 0px 0px 1px;
+}
+/* line 51, /Users/dcam1901/Desktop/programming/my-website-app/app/assets/stylesheets/projects.scss */
+#project-show .list-inline.social {
+  margin-top: 15px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
