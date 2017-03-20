@@ -85,6 +85,7 @@
                    <ul class="submenu">
                      <li><%= link_to "New Project", new_project_path %></li>
                      <li><%= link_to "New Post", new_blog_post_path %></li>
+                     <li><%= link_to "Unpublished Posts", unpublished_posts_path %></li>
                      <li><%= link_to "Sign Out", destroy_user_session_path %></li>
                    </ul>
                  </li>
@@ -116,6 +117,14 @@
     <!-- Back to Top -->
     <div id="back-top"><a href="#top"></a></div>
     <!-- /Back to Top -->
+    <script>
+      $(function(){
+        $('html, body').animate({
+            scrollTop: $('#content').offset().top
+        }, 2000);
+        return false;
+      });
+    </script>
 
     <% if Rails.env.production? %>
       <script>
