@@ -27,7 +27,7 @@
           <% end %>
 
           <div class="blog-text">
-            <p><%= sanitize(@blog_post.text) %></p>
+            <p><%= sanitize(@blog_post.text, attributes: %w(href target)) %></p>
           </div>
 
           <% if current_user %>
