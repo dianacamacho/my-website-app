@@ -20,7 +20,7 @@ class BlogPost < ApplicationRecord
 
   def shortened_text
     link = "/blog_posts/#{id}"
-    text[0..259] + " ... " + '<a href=' + link + '>View Full Post</a>'
+    text[0..259] + " ... " + '<a href=' + link + ' class="blue-text">View Full Post</a>'
   end
 
   def viewable?
