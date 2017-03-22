@@ -36,7 +36,7 @@
               <% if @blog_post.draft %>
                 <%= form_for(@blog_post, html: {style: "display: inline-block"}) do |f| %>
                   <%= f.hidden_field :draft, value: false %>
-                  <%= button_tag "Publish", class: "btn btn-lg btn-darker" %>
+                  <%= button_tag "Publish Post", class: "btn btn-lg btn-darker" %>
                 <% end %>
               <% end %>
               <%= link_to "Delete Post", blog_post_path(@blog_post), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-lg btn-darker" %>
