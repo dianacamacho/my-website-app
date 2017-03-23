@@ -190,7 +190,7 @@ jQuery(document).ready(function () {
     jQuery(".heroimage-wrap").height(document_height);
 
     var header_height = jQuery(".outer-wrap").outerHeight() * -1;
-    console.log(header_height);
+    // console.log(header_height);
     if (header_height!==0) {
         // $("#heroimage1").css("marginTop",header_height);
     }
